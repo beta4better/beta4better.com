@@ -1,0 +1,35 @@
+---
+title: Posterous will turn off on April 30, 2013
+date: 2013-03-08 22:41:47
+tags: [posterous, twitter]
+filters: reST
+---
+收到这封邮件的时候我才知道，原来 Posterous 现在是 Twitter 的了。
+
+在我个人的印象中 Posterous 也是一个博客服务提供商，他们的特色是可以用邮件来发文章。不过很可惜的是国内用不了这样的服务，就如同 Twitter 一样。
+
+再厉害的企业也是有停业甚至倒闭的时候，所有的数据都得要好好备份，等到丢了的时候就后悔莫及了。
+
+Posterous launched in 2008. Our mission was to make it easier to share photos and connect with your social networks. Since joining Twitter almost one year ago, we’ve been able to continue that journey, building features to help you discover and share what’s happening in the world – on an even larger scale. 
+
+On April 30th, we will turn off posterous.com and our mobile apps in order to focus 100% of our efforts on Twitter. This means that as of April 30, Posterous Spaces will no longer be available either to view or to edit.
+
+We’d like to thank the millions of Posterous users who have supported us on our incredible journey. We hope to provide you with as easy a transition as possible, and look forward to seeing you on Twitter. Thank you. 
+
+Sachin Agarwal, Founder and CEO
+
+.. code-block:: python
+
+    def joinurl(*args):
+        """Joins multiple urls pieces to one single URL without loosing the root
+        (first element).
+    
+        >>> joinurl('/hello/', '/world/')
+        '/hello/world/'
+        """
+        r = []
+        for i, mem in enumerate(args):
+            if i > 0:
+                mem = unicode(mem).lstrip('/')
+            r.append(mem)
+        return join(*r)

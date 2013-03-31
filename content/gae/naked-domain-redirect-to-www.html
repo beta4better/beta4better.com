@@ -1,0 +1,22 @@
+---
+title: 裸域重定向到www
+date: 2011-03-07 15:44:00
+Author: beta4better
+Slug: naked-domain-redirect-to-www
+---
+将裸域重定向到www的原因是因为大多数人的习惯是在输入网址时首先输www，比如说你要访问[我的那些花儿][]，如果你记得网址的话会习惯性的在地址栏里输入www.beta4better.me，而很少有人会直接输入beta4better.me。为了方便起见也同时是为了统一，因此需要将裸域重定向到www。
+
+</p>
+
+如果你的服务器用的是nginx，那么有一种十分方便的方法，那就是添加一个server块，在里面输入下面的内容即可，很是方便哦。
+
+</p>
+
+rewrite \^/(.\*)\$ http://www.beta4better.me/\$1 permanent;
+
+</p>
+
+![][]
+
+  [我的那些花儿]: http://http://www.beta4better.me/
+  []: http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjbswEM

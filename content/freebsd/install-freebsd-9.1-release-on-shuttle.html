@@ -1,0 +1,33 @@
+---
+title: 在 Shuttle 上安装 FreeBSD 9.1 Release
+date: 2013-03-23 14:45:00
+slug: install-freebsd-9.1-release-on-shuttle
+---
+印象中这台 Shuttle 买了好久了，配了 16GB 的内存，唯一的遗憾就是处理器是 Intel i5 2320，集成的显卡是 HD2000，驱动起来不是很方便（当然啊这个跟 WIN 无关）。即便是安装 Linux，也需要[把内核更新到3.0以上](/2013/screen-resolution-adjustment-using-intel-2nd-generation-cpu.html)才能正常驱动。原来的独立显卡4850由于换过风扇放不进去，很悲据的就是在网上买不到对应的小风扇，都是那种占用两个 PCI 槽位。买个便宜的不甘心，买个6850阿什么又太贵。一直就这么放着，隔断时间启动一下，别受潮了。
+
+FreeBSD [去年10月份的时候折腾过一阵子](/wordpress/freebsd.html)，不过 Intel 的集成显卡驱动起来实在是让人纠结，之后也就不了了之了。
+
+近期 [FreeBSD][freebsd] 似乎是启动了新的包管理机制，用 pkg 取代了 pkd_XX 这种方式 ---可能我的表述不是十分的正确，现在对于 [FreeBSD][freebsd] 的认识还没有对于 Linux 那么清晰些。之前要驱动 Intel HD 系列的显卡需要用 `WITH_NEW_XORG` 和 `WITH_KMS` 重新编译内核。最近在 FreeBSChina 的论坛上看到 pkg 的方式提供了预编译好的包，启用了 KMS 的支持。
+
+经过验证确实如此，只需要用 `pkg install xorg` 就可以完成。
+
+首先你要安装 pkg 这个软件，对于全新安装完的系统（FreeBSD 9.1 Release）直接运行 pkg 就会安装，不过版本号是 1.0.2， 可能会比较低。低版本的 pkg 在更新的时候会有些小问题，建议用 port 里面的安装。对于新安装完的系统需要先用 portsnap 更新下 port：
+
+    portsnap fetch
+    portsnap extract
+
+然后到 `/usr/port/port-mgmt/pkg` 下运行 `make install clean` 即可。
+
+pkg 安装后运行 `pkg install xorg` 就安装好了 X 环境。之后在 `/etc/rc.conf` 里面添加两项：
+
+    dbus_enabled = "YES"
+    hald_enabled = "YES"
+
+之后重新启动，不出意外的话，X 就可以用了。
+
+不过问题依旧存在，启动了 X 环境之后就不能切换到命令行界面了，依旧无解，就我所知。
+
+以上。
+
+
+[freebsd]: http://www.freebsd.org

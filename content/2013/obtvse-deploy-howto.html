@@ -1,0 +1,101 @@
+---
+layout: post
+title: Obtvse Deploy Howtos
+date: 2013-01-22 10:36:00
+tags: [obtvse, apache2, debian, hostigation, rvm]
+---
+  
+vps 环境介绍：
+
+Hostigation 的 vps，开始的时候用的是年付30美金的那种，128MB 的内存，前两天做了下升级，内存加到512MB，重新安装的系统 Debian Squeeze。用下面的命令安装的 Apache2，不过后来想想貌似用不到：
+
+    apt-get install libapache2-mod-passenger
+
+用 RVM 来安装 Ruby 和 Rails，具体请参考 RVM 的网站，简单的两条命令如下：
+
+    curl 
+
+
+    For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
+        ruby: /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+
+
+按照要求安转一下就好：
+
+    apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+
+完成之后到 obtvse 的目录下执行：
+
+    bundle install
+
+如果得到如下的错误提示：
+
+    Installing pg (0.13.2) with native extensions
+    Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+需要安装下这个库：
+
+    apt-get install libpq-dev
+
+然后继续用 `bundle install` 完成上一步操作。再接下来执行：
+
+    rake db:migrate
+
+可能会遇到这样的问题：
+
+    rake aborted!
+    Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.
+
+解决办法是在 Gemfile 中加入一行：
+
+    gem execjs
+
+然后重新执行 `bundle install` 和 `rake db:migrate`。然后就OK了。
+
+虽然之前用 apt 安装了 libapache2-mod-passenger，不过因为 ruby 使用 RVM 安装的，版本应该是不对应的，所以还得用 gem 重新安装下。
+
+    gem install passenger
+
+然后执行：
+
+    passenger-install-apache2
+
+按照提示完成操作，应该是有一些必要的库文件要安装：
+
+    apt-get install libcurl4-openssl-dev
+    apt-get install apache2-prefork-dev
+    apt-get install libapr1-dev
+    apt-get install libaprutil1-devssenger-install-apache2
+
+我自己的 vps 上提示要安装上面的这些。完成后会看到这样的提示，需要将下面的三行写入到 Apache 的配置文件中。
+
+    LoadModule passenger_module /home/beta4better/.rvm/gems/ruby-1.9.3-p374/gems/passenger-3.0.19/ext/apache2/mod_passenger.so
+    PassengerRoot /home/beta4better/.rvm/gems/ruby-1.9.3-p374/gems/passenger-3.0.19
+    PassengerRuby /home/beta4better/.rvm/wrappers/ruby-1.9.3-p374/ruby
+
+第一行放到 `/etc/apache2/mods-enabled/passenger.load` 中。后两行放到 `/etc/apache2/mods-enabled/passenger.conf` 中。然后虚拟主机的配置文件参考下面的：
+
+    <VirtualHost *:80>
+       ServerName www.yourhost.com
+       # !!! Be sure to point DocumentRoot to 'public'!
+       DocumentRoot /somewhere/public
+       <Directory /somewhere/public>
+          # This relaxes Apache security settings.
+          AllowOverride all
+          # MultiViews must be turned off.
+          Options -MultiViews
+       </Directory>
+    </VirtualHost>
+
+
+之后在 obtvse 里面做一些必要的设置就可以用了，记得要重新启动一次 Apache。
+
+    service apache2 restart
+
+
+后记：
+
+以上文字或许有些笔误，仅供留存后忘，有地可查，具体情况请酌情修改。
+
+
+

@@ -1,0 +1,13 @@
+---
+title: 让人又爱又恨的FreeBSD
+date: 2012-10-15 14:08:00
+Author: Beta4Better
+Category: Uncategorized
+tags: [freebsd, kms, VESA]
+slug: freebsd
+---
+这两天在拼命地折腾 FreeBSD，其实主要还是在 Intel 的集成显卡的驱动上，用 VESA 来驱动的话不是那么理想。
+
+笔记本上1280x800的分辨率是正常的，不过逐行刷新卡的要命。而在台式机上 HD Graphics 的显卡分辨貌似只能到1280x1024，在最佳分辨率是1680x1050的显示器上字体发虚，觉得很别扭。
+
+好在现在社区提供一种方法，用 `WITH_NEW_ORG` 和 `WITH_KMS` 重新编译整个系统和 xf86-video-intel，这样分辨率正常，不过不能在控制台和图形界面之间切换，启动图形界面后要切换到控制台就会花屏，而直接退出图形界面的话会直接黑屏，暂时无解。

@@ -1,0 +1,12 @@
+<article class="content" style="height:100%">
+	<section>
+		{% mark article -%}
+		{% filter markdown -%}{% block post %}{% endblock %}{%- endfilter %}
+		{%- endmark %}
+	</section>						
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> {{ resource.meta.date }}&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> 5 comment&nbsp;&nbsp;
+		<i class="icon-arrow-left"></i><a href="{{ resource.prev_by_time.full_url }}"> newer</a>&nbsp; <i class="icon-bookmark"></i><a href="{{ resource.full_url }}"> permlink</a>&nbsp;<i class="icon-arrow-right"></i><a href="{{ resource.next_by_time.full_url }}"> older</a></p>
+	</footer>
+</article>

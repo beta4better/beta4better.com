@@ -1,0 +1,215 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Debian vs Ubuntu | Beyond Writing</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content= "Charles Yuan" >
+
+		<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+				<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="/assets/js/html5shiv.js"></script>
+	<![endif]-->
+		<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="/assets/ico/favicon.png">
+	                                   
+</head>
+
+<body class="2012-02-16-debian-vs-ubuntu">
+    <div class="container">
+			<header class="content text-center front-color">
+				<!--<img src="/assets/images/charles.jpg" class="img-circle" style="width:80px;"/>-->
+				<h1><a href="http://www.beta4better.me/">Beyond Writing</a></h1>
+				<h2><small>Pursue something so important that even if you fail, the world is better off with you having tried.</small></h2>
+			</header> <!-- head section -->
+			
+			<section class="row">
+				<div class="span9">
+					<article class="content front-color">
+	<header>
+		<h2>Debian vs Ubuntu</h2>
+			
+		<p>
+			<i class="icon-calendar"></i> 2012-02-16 10:47:00&nbsp; 
+			<i class="icon-user"></i> beta4better&nbsp; 
+			<i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-16-debian-vs-ubuntu.html#disqus_thread">comments</a>&nbsp; 
+			<i class="icon-bookmark"></i><a href="/2012/2012-02-16-debian-vs-ubuntu.html"> permlink</a>&nbsp;
+		</p>
+			</header>
+	<section>
+		<p>自从上次将<a href="/">笔记本的内存升级到了8GB</a>后，最近便一直在折腾系统。我的最终想法是选一款简单够用的系统，装上几个平时常用的软件就OK。越简单越好。</p>
+<p>Windows肯定是不能选的，对于微软的Windows，我的感觉是：</p>
+<ul>
+<li>现在针对Windows的各类流氓软件太多，防不胜防；</li>
+<li>Windows下磁盘读写太频繁，动不动硬盘灯就会亮起来； </li>
+<li>在Windows上安装Jekyll之类的工具完全不了解；</li>
+<li>Windows下的硬盘数据加密也是从来没有接触过；</li>
+<li>最后一点，Windows买不起，一直在用D版的；</li>
+</ul>
+<p>基于上面的种种原因，还是要用Linux的。至于Linux，有着太多的发行版，比如：Debian、Ubuntu、Gentoo、Arch、Fedora、CentOS等等等等，可以说是数不胜数。但对我来说比较熟悉的还是前三个：Debian、Ubuntu和Gentoo。内存装上去之后我就拿Debian来装系统了，一是熟悉，而是VPS上用的全是这个，方便数据的部署和迁移。</p>
+<p>使用debian-6.0.3-amd64-businesscard.iso这个镜像，通过unetbootin-windows-563.exe写到U盘上来安装，因为ThinkPad X201i是12寸的本，没有光驱。第一次看到了Debian的安装还有专家模式……以前从来没有见过，很专业，定制度很高，基本可以按照你的希望调整整个系统的配置。</p>
+<p>我选用的分区方案是带加密功能的LVM方案。我个人觉得近乎完美，整个过程中除了无线网卡在安装时进行配置外，其他一切OK。不记得第一次的时候分区类型选的是什么了，要么是ext4，要么是brtfs。后期使用的时候感觉从硬盘读文件延迟很高。用TAB进行命令补全的时候要顿一会才能出来。</p>
+<p>上面这次貌似是在换8GB内存之前的事情，内存升级后又重新装了一次Debian，也是用用的加密的LVM方案。不过交换分区默认给分了9.6GB，惊啊！分区类型选的是XFS，感觉一切OK。</p>
+<p>其实装好了Debian用着挺舒心的，整个中文字体配置的也算是不错了，不过由于我现在是用Jekyll搭的网站，用markdown语法来写文字，我想用emacs---因为emacs里面有个markdown的插件，可以高亮显示markdown的语法。不过令人不爽的是emacs里面汉字显示渲染真的是好难看，就像是显示器的分辨率没有调到最好一样，字体变形，怎么看怎么别扭。</p>
+<p>因为上面的原因我又想到了ubuntu，因为ubuntu下汉字显示很是不错。至于ubuntu，我很早的时候就用过。当时还是6，我还领过免费发放的安装光盘。现在版本号已经到了11.10。</p>
+<p>ubuntu现在分了好几种光盘镜像，alternative、livecd和server吧。如果想用LVM的分区方案貌似是必须用alternative的光盘，livecd只能用基本的主分区和逻辑分区的方案。</p>
+<p>安装过程是曲折的，刚开始的时候么有注意到ubuntu的alternative光盘也有专家模式，我对它默认的lvm分区方案不是很满意。文件系统的类型默认是ext4，交换分区的卷标默认是swap_1，一开始不知道怎么调整。后来注意到了专家模式，这次好了可以完全按照我的意图来分区了，不过要命的是到kernel那一步的时候死活过去不，安装出现错误。我真的不明白，同样是基于debian的系统，安装过程也和debian一样，为啥就会卡在内核安装这一步呢。这与当时换ubuntu的初衷完全不一样了，换了这个系统还不够那折腾的。早知道是这样当时就不折腾了，emacs下面字体难看就难看吧，我换个别的编辑器就OK的。</p>
+<p>这真是：</p>
+<blockquote>
+<p>生命在于折腾，生命不止，折腾不息！</p>
+</blockquote>
+<p>昨天是28岁的生日，一个毫无希望的招标发布了标书，被折腾到将近晚上九点。白天装ubuntu装了好几次，最后也是不满意。</p>
+<p>晚上11点多了最后一次尝试ubuntu也终是已失败而放弃，继续回归debian。晚上回家看结果。</p>			</section>
+
+		<section>
+		<div class="row">
+			<div class="span4" style="margin:20px 30px 20px 20px;">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0878077987353821";
+				/* 300x250, 创建于 10-6-25 */
+				google_ad_slot = "2532340215";
+				google_ad_width = 300;
+				google_ad_height = 250;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>	
+			<div class="span4" style="margin:20px 0px 20px 30px;">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0878077987353821";
+				/* 300x250, 创建于 10-6-25 */
+				google_ad_slot = "2532340215";
+				google_ad_width = 300;
+				google_ad_height = 250;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>	
+	</section>
+	
+		<ul class="pager">
+				<li class="previous"><a href="/2012/2012-02-16-happy-birthday.html">&laquo;&nbsp;Happy Birthday!</a></li>
+						<li class="next"><a href="/2012/2012-02-07-thinkpad-x201i-upgrade.html">Thinkpad X201i Upgrade&nbsp;&raquo;</a></li>		
+			</ul>
+		
+
+		
+						
+	<section class="comments">
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	        var disqus_shortname = 'beta4better'; // required: replace example with your forum shortname
+
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	    
+	</section>
+	
+
+</article>
+				</div> <!-- main content span9 -->
+
+				<div class="span3 sidebar">
+					<section class="content about front-color">
+<img src="/assets/images/hill.jpg" />
+</section>
+
+<section class="content blogrolls front-color">
+	<h5>BLOG ROLLS</h5>
+	<ul class="unstyled">
+		<li><i class="icon-th-list"></i><a href="http://abby.beta4better.me/" > 风吹过的夏天</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.lowendserver.net/" > L.E.S</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.v2ex.com/" > V2EX</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.allthingsdistributed.com/" > All Things Distributed</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.lowendbox.com/" > Lowendbox</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.python-china.org/" > Python China</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.ruby-china.org/" > Ruby China</a></li>
+	</ul>
+</section>
+
+<section class="content archives front-color">
+	<h5>Archives</h5>
+	<ul class="unstyled">
+		<li><i class="icon-bookmark"></i><a href="/freebsd/" > FreeBSD</a></li>
+		<li><i class="icon-bookmark"></i><a href="/2013/" > 2013</a></li>
+		<li><i class="icon-bookmark"></i><a href="/2012/" > 2012</a></li>
+		<li><i class="icon-bookmark"></i><a href="/wordpress/" > Wordpress - legacy</a></li>
+		<li><i class="icon-bookmark"></i><a href="/gae/" > GAE - legacy</a></li>
+	</ul>
+</section>
+
+<section class="content ads">
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-0878077987353821";
+	/* abby.beta4better.me */
+	google_ad_slot = "2936335265";
+	google_ad_width = 200;
+	google_ad_height = 200;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</section>
+				</div><!-- sidebar span3 -->
+			</section><!-- main content sectoin  -->
+
+			<footer class="content text-left footer">
+				<p class="muted">&copy; 2010-2013</p>
+			</footer><!-- foot section -->	
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap-transition.js"></script>
+    <script src="/assets/js/bootstrap-alert.js"></script>
+    <script src="/assets/js/bootstrap-modal.js"></script>
+    <script src="/assets/js/bootstrap-dropdown.js"></script>
+    <script src="/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/assets/js/bootstrap-tab.js"></script>
+    <script src="/assets/js/bootstrap-tooltip.js"></script>
+    <script src="/assets/js/bootstrap-popover.js"></script>
+    <script src="/assets/js/bootstrap-button.js"></script>
+    <script src="/assets/js/bootstrap-collapse.js"></script>
+    <script src="/assets/js/bootstrap-carousel.js"></script>
+    <script src="/assets/js/bootstrap-typeahead.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'beta4better'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+
+</body>
+</html>

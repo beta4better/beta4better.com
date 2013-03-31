@@ -1,0 +1,69 @@
+---
+title: 20110330
+date: 2011-03-30 15:38:00
+Author: beta4better
+Slug: 20110330
+---
+今天晚上V2EX上看到在讨论twitter
+api的问题提到了一个项目[gtap][]。但是下载0.4.1版，部署后却发现不能用，错误信息如下：
+
+</p>
+<p>
+> </p>
+>
+> Traceback (most recent call last):
+>
+> </p>
+>
+> File
+> "/base/python\_runtime/python\_lib/versions/1/google/appengine/ext/webapp/**init**.py",
+> line 634, in **call**
+>
+> handler.get(\*groups)
+>
+> </p>
+>
+> File "/base/data/home/apps/XXX/1.349368123341425958/main.py", line
+> 131, in get
+>
+> self.do\_proxy('GET')
+>
+> </p>
+>
+> File "/base/data/home/apps/XXX/1.349368123341425958/main.py", line 91,
+> in do\_proxy
+>
+> return success\_output(self, gtap\_message )
+>
+> </p>
+>
+> File "/base/data/home/apps/XXX/1.349368123341425958/main.py", line 33,
+> in success\_output
+>
+> handler.response.status = '200 OK'
+>
+> </p>
+>
+> AttributeError: can't set attribute
+>
+> </p>
+> <p>
+
+</p>
+
+用google在网上搜了一下关于gtap配置的文章，倒是有很多，差不多都是在2010年8、9月份写的，V2EX上也有人说可以用，但是没搞明白为什么我部署完却不能用，难道是RP问题？
+
+</p>
+
+以为是新版的问题，但是却发现上一个版本0.4版下载不了已经。提交了一个issue，看作者回复了。
+
+</p>
+
+twitter虽然注册了很久了，但平时基本不用的。今天研究这个问题花费了一晚上的时间，计划被打乱了。感觉有点不值得。早上争取早起一会把改写的写完。
+
+</p>
+
+![][]
+
+  [gtap]: http://code.google.com/p/gtap/
+  []: http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjBuAIM

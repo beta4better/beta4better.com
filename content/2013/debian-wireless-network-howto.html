@@ -1,0 +1,52 @@
+---
+title: Debian Wireless Network Howto
+date: 2013-01-06 03:11:00
+tags: [debian, iface, wlan, wpa-ssid, wpa-psk]
+---
+
+
+简单的总结下 Debia 下无线网络的使用方法，备日后查用，仅此。
+
+
+有线网卡，动态获取IP地址：
+
+    alow-hotplug eth0
+    iface eth0 inet dhcp
+
+无线WIFI，没有密码加密的：
+
+    iface wlan0 inet dhcp
+        wireless-essid wifi-ssid
+
+有密码的：
+
+    iface wlan0 inet dhcp
+        wpa-ssid wifi-ssid
+        wpa-psk wifi-password
+
+
+如果你和我一样，不习惯用图形的无线管理软件，只是用命令行的方式，开启WIFI就可以，而且需要切换网络，那么可以在 `/etc/network/interface` 里面做一个类似下面这样的配置：
+
+    iface home inet dhcp
+        wpa-ssid wifi-ssid
+        wpa-psk wifi-password    
+
+
+    iface work inet dhcp
+        wpa-ssid wifi-ssid
+        wpa-psk wifi-password 
+
+
+在家里的时候用这条命令开启无线：
+
+    ifup wlan0=home
+
+在公司的时候用这条命令开启无线：
+
+    ifup wlan0=work
+
+
+
+这样我觉得还是挺方便的。到一个新的地方的时候就在配置文件里面新加几行配置就好。
+
+记录已被后查。

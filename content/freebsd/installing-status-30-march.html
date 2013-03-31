@@ -1,0 +1,29 @@
+---
+title: 安装进度：开机一晚上后X无法启动
+date: 2013-03-29 12:11:00
+slug: installing-status-30-march
+---
+
+昨天晚上，重新安装了一边系统。感觉硬盘的动静越来越大，于是决定重新买块硬盘，等收到后还得重新安装系统，于是我就放开了折腾。
+
+重新安装了一遍系统，没有安装系统源码`src`。之后用二进制包安装的 `xorg` 和 `gnome2`。一切正常。
+
+之后安装了中文字体 `fonts-wqy`和中文输入法 `ibus-pinyin`，正常使用。
+
+因为默认的二进制包的 intel 驱动没有开启 KMS 的支持，屏幕分辨率不正确，因此重新编译安装了 `xf86-video-intel` 这个包，因为有依赖关系所以 `graphic/libdrm` 也重新进行了编译。
+
+我觉的可能问题出现在这里，混用了 package 和 ports。编译结束后重启，gnome 的很多图标看不到了，这是我觉得已经有一些奇怪了。
+
+之后有用 package 安装了 opera，firefox，gimp 和一个 BT 软件： qbittorrent。
+
+然后安装 subversion 同步源代码树：
+
+    svn checkout https://svn.west.freebsd.org/stable/9 /usr/src
+
+这个过程很慢，而且硬盘一直嘎嘎嘎嘎的响，没管太多，正常开 BT 作下载测试。
+
+本想用 portmaster 更新下已经安装了的 ports，这里注意就开始混用了，因为有一个 port 依赖源码头文件没有进行。但是用 `portmaster x11/gnome2` 重新安装了一边 gnome2 。 安装完的当时没有问题，便开着机器运行了一晚上，但是到今天早上开机的时候发现屏幕花了，X 按一下键盘就闪一下，强制重启，结果 gdm 就起不来了。用 startx 直接黑屏。
+
+至此 X 崩溃。
+
+晚上的计划，把所有的 packages 删掉，重新用 portmaster 安装一次试试看。

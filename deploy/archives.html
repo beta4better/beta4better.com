@@ -1,0 +1,3826 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Single Archive Page | Beyond Writing</title>
+	
+	<meta name="description" content="Single archive page for the whole site">
+	<meta name="author" content= "beta4better" >
+
+		<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+				<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="/assets/js/html5shiv.js"></script>
+	<![endif]-->
+		<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="/assets/ico/favicon.png">
+	                                   
+</head>
+
+<body class="archives">
+    <div class="container">
+			<header class="content text-center front-color">
+				<!--<img src="/assets/images/charles.jpg" class="img-circle" style="width:80px;"/>-->
+				<h1><a href="http://www.beta4better.me/">Beyond Writing</a></h1>
+				<h2><small>Pursue something so important that even if you fail, the world is better off with you having tried.</small></h2>
+			</header> <!-- head section -->
+			
+			<section class="row">
+				<div class="span9">
+					
+<header class="content">
+	<h1>Single Archive Page</h1>
+</header>
+
+
+<article class="content">
+	<section>
+				<h2>安装进度：开机一晚上后X无法启动</h2>
+		<p>昨天晚上，重新安装了一边系统。感觉硬盘的动静越来越大，于是决定重新买块硬盘，等收到后还得重新安装系统，于是我就放开了折腾。</p>
+
+<p>重新安装了一遍系统，没有安装系统源码<code>src</code>。之后用二进制包安装的 <code>xorg</code> 和 <code>gnome2</code>。一切正常。</p>
+
+<p>之后安装了中文字体 <code>fonts-wqy</code>和中文输入法 <code>ibus-pinyin</code>，正常使用。</p>
+
+<p>因为默认的二进制包的 intel 驱动没有开启 <span class="caps">KMS</span> 的支持，屏幕分辨率不正确，因此重新编译安装了 <code>xf86-video-intel</code> 这个包，因为有依赖关系所以 <code>graphic/libdrm</code> 也重新进行了编译。</p>
+
+<p>我觉的可能问题出现在这里，混用了 package 和 ports。编译结束后重启，gnome&nbsp;的很多图标看不到了，这是我觉得已经有一些奇怪了。</p>
+
+<p>之后有用 package 安装了 opera，firefox，gimp 和一个 <span class="caps">BT</span> 软件：&nbsp;qbittorrent。</p>
+
+<p>然后安装 subversion&nbsp;同步源代码树：</p>
+
+<pre><code>svn checkout https://svn.west.freebsd.org/stable/9 /usr/src
+</code></pre>
+
+<p>这个过程很慢，而且硬盘一直嘎嘎嘎嘎的响，没管太多，正常开 <span class="caps">BT</span>&nbsp;作下载测试。</p>
+
+<p>本想用 portmaster 更新下已经安装了的 ports，这里注意就开始混用了，因为有一个 port 依赖源码头文件没有进行。但是用 <code>portmaster x11/gnome2</code> 重新安装了一边 gnome2 。 安装完的当时没有问题，便开着机器运行了一晚上，但是到今天早上开机的时候发现屏幕花了，X 按一下键盘就闪一下，强制重启，结果 gdm 就起不来了。用 startx&nbsp;直接黑屏。</p>
+
+<p>至此 X&nbsp;崩溃。</p>
+
+<p>晚上的计划，把所有的 packages 删掉，重新用 portmaster&nbsp;安装一次试试看。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-29 12:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//freebsd/installing-status-30-march.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/freebsd/installing-status-30-march.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>自适应设备屏幕宽度的页面代码</h2>
+		<p>其实仅仅是一段代码的问题：</p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-26 11:18:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/responsive-web-design.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/responsive-web-design.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>在 Shuttle 上安装 FreeBSD 9.1 Release</h2>
+		<p>印象中这台 Shuttle 买了好久了，配了 <span class="caps">16GB</span> 的内存，唯一的遗憾就是处理器是 Intel i5 2320，集成的显卡是 <span class="caps">HD2000</span>，驱动起来不是很方便（当然啊这个跟 <span class="caps">WIN</span> 无关）。即便是安装 Linux，也需要<a href="/2013/screen-resolution-adjustment-using-intel-2nd-generation-cpu.html">把内核更新到3.0以上</a>才能正常驱动。原来的独立显卡4850由于换过风扇放不进去，很悲据的就是在网上买不到对应的小风扇，都是那种占用两个 <span class="caps">PCI</span>&nbsp;槽位。买个便宜的不甘心，买个6850阿什么又太贵。一直就这么放着，隔断时间启动一下，别受潮了。</p>
+
+<p>FreeBSD <a href="/wordpress/freebsd.html">去年10月份的时候折腾过一阵子</a>，不过 Intel&nbsp;的集成显卡驱动起来实在是让人纠结，之后也就不了了之了。</p>
+
+<p>近期 <a href="http://www.freebsd.org">FreeBSD</a> 似乎是启动了新的包管理机制，用 pkg 取代了 pkd_XX 这种方式 &#8211;可能我的表述不是十分的正确，现在对于 <a href="http://www.freebsd.org">FreeBSD</a> 的认识还没有对于 Linux 那么清晰些。之前要驱动 Intel <span class="caps">HD</span> 系列的显卡需要用 <code>WITH_NEW_XORG</code> 和 <code>WITH_KMS</code> 重新编译内核。最近在 FreeBSChina 的论坛上看到 pkg 的方式提供了预编译好的包，启用了 <span class="caps">KMS</span>&nbsp;的支持。</p>
+
+<p>经过验证确实如此，只需要用 <code>pkg install xorg</code> 就可以完成。</p>
+
+<p>首先你要安装 pkg 这个软件，对于全新安装完的系统（FreeBSD 9.1 Release）直接运行 pkg 就会安装，不过版本号是 1.0.2， 可能会比较低。低版本的 pkg 在更新的时候会有些小问题，建议用 port 里面的安装。对于新安装完的系统需要先用 portsnap 更新下&nbsp;port：</p>
+
+<pre><code>portsnap fetch
+portsnap extract
+</code></pre>
+
+<p>然后到 <code>/usr/port/port-mgmt/pkg</code> 下运行 <code>make install clean</code> 即可。</p>
+
+<p>pkg 安装后运行 <code>pkg install xorg</code> 就安装好了 X 环境。之后在 <code>/etc/rc.conf</code> 里面添加两项：</p>
+
+<pre><code>dbus_enabled = "YES"
+hald_enabled = "YES"
+</code></pre>
+
+<p>之后重新启动，不出意外的话，X&nbsp;就可以用了。</p>
+
+<p>不过问题依旧存在，启动了 X&nbsp;环境之后就不能切换到命令行界面了，依旧无解，就我所知。</p>
+
+<p>以上。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-23 14:45:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//freebsd/install-freebsd-9.1-release-on-shuttle.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/freebsd/install-freebsd-9.1-release-on-shuttle.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello Hyde!</h2>
+		<p>果不其然，不出一个月的时候我又把网站换回了 <a href="http://github.com/hyde/hyde">Hyde</a>。
+不过不同的地方是这次的主题是自己弄的，没有抄袭别人的，只是使用了 <a href="http://github.com/twitter/bootstrap">Bootstrap</a>的代码。现在只是有了个初步的样子，细节的部分只能慢慢的完善。</p>
+
+<p>鉴于之前遇到的 <span class="caps">VPS</span>&nbsp;服务商跑路阿、倒闭阿，抑或是某某服务突然关闭阿，更有甚者自己的硬盘数据丢失阿，等等等等，诸如此类。数据还是应该分开在多个地方做一下备份。</p>
+
+<p>因为网站是纯静态的，还是 <span class="caps">HOST</span> 到 <span class="caps">AWS</span> 比较好些，省资源而且费用也低。Dropbox 和 Github&nbsp;也放一个备份。</p>
+
+<p>Hello Hyde, I am coming&nbsp;back!</p>
+
+<p>暂时来看功能还是比较的简单，只是简单的文章展示，没有启用类似标签阿、分类阿之类的功能。还是简单些比较好，等积累了比较多的有价值的文字的时候再作细分也不迟。</p>
+
+<p>还的完善，尤其是细节。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-23 12:55:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/hello-hyde.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/hello-hyde.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>如何在bash及csh下设置环境变量</h2>
+		<p>1.对于bash（Linux的默认shell）：</p>
+
+<pre><code>export VARNAME=VARVALUE
+</code></pre>
+
+<p>2.对于csh（FreeBSD的默认shell）：</p>
+
+<pre><code>setenv VARNAME=VARVALUE
+</code></pre>
+
+<p>以上是临时设置的方法，若是要长期使用，需要分别在.cshrc及.bashrc设置。</p>
+
+<p>其他的几个与shell有关的命令：</p>
+
+<ol>
+<li>env显示所有的环境变量</li>
+<li>set显示所有本地定义的shell变量。和env有啥区别我也不太清除。</li>
+<li>readonly设置只读变量</li>
+<li>unset删除变量</li>
+</ol>
+
+<p>以上。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-23 11:18:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/howto-set-bash-csh-enviroment-variable.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/howto-set-bash-csh-enviroment-variable.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>信任与欣赏的力量</h2>
+		<p>下面的文章是从别的地方转载过来的，其他我并不倾向于全片转载别人的文字，不过这篇看完觉得很有感触，转过来作为一个备份吧。原本是从微博上看来的，原文地址没有记住，如果有任何不合适的地方，请<a href="mailto:beta4better.me">与我联系</a>。</p>
+
+<p>有这样一位妈妈第一次参加家长会，幼儿园的老师说：“你的儿子有多动症，在板凳上连三分钟都坐不了，你最好带他去医院看一看。”</p>
+
+<p>回家的路上，儿子问她老师都说了些什么，她鼻子一酸，差点流下泪来。因为全班30位小朋友，惟有他表现最差；惟有对他，老师表现出不屑。</p>
+
+<p>然而她还是告诉她的儿子：“老师表扬你了，说宝宝原来在板凳上坐不了一分钟，现在能坐三分钟。其他妈妈都非常羡慕妈妈，因为全班只有宝宝进步了。”那天晚上，她儿子破天荒吃了两碗米饭，并且没让她喂。</p>
+
+<p>儿子上小学了。家长会上，老师说：“这次数学考试，全班50名同学，你儿子排第40名，我们怀疑他智力上有些障碍，您最好能带他去医院查一查。”</p>
+
+<p>回去的路上，她流下了泪。然而，当她回到家里，却对坐在桌前的儿子说：“老师对你充满信心。他说了，你并不是个笨孩子，只要能细心些，会超过你的同桌，这次你的同桌排在第21名。”</p>
+
+<p>说这话时，她发现儿子黯淡的眼神一下子充满了光，沮丧的脸也一下子舒展开来。她甚至发现，儿子温顺的让她吃惊，好象长大了许多。第二天上学，去得比平时都要早。</p>
+
+<p>孩子上了初中，又一次家长会。她坐在儿子的座位上，等着老师点她儿子的名字，因为每次家长会，她儿子的名字在差生的行列中总是被点到。然而，这次却出乎她的预料——直到结束，都没有听到。</p>
+
+<p>她有些不习惯，临别去问老师，老师告诉她：“按你儿子现在的成绩，考重点高中有点危险。”</p>
+
+<p>她怀着惊喜的心情走出校门，此时她发现儿子在等她。路上她扶着儿子的肩膀，心里有一种说不出的甜蜜，她告诉儿子：“班主任对你非常满意，他说了，只要你努力，很有希望考上重点高中。”</p>
+
+<p>高中毕业了。第一批大学录取通知书下达时，学校打电话让她儿子到学校去一趟。她有一种预感，她儿子被清华录取了，因为在报考时，她给儿子说过，她相信他能考取这所大学。</p>
+
+<p>她儿子从学校回来，把一封印有清华大学招生办公室的特快专递交到她的手里，突然转身跑到自己的房间里大哭起来，边哭边说：“妈妈，我知道我不是个聪明的孩子，可是，这个世界上只有你能欣赏我……”</p>
+
+<p>这时，她悲喜交加，再也按捺不住十几年来凝聚在心中的泪水，任它打在手中的信封上…</p>
+
+<p>赞美会让白痴变成天才，别人会朝你赞美的方向走来，赞美才是真正的通灵状态。今天你赞美和欣赏自己了吗？今天你欣赏和赞美你的另一半了吗？今天你欣赏和赞美你的父母，你的子女，你的合作伙伴，你的员工与下属了吗？</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-10 22:27:07&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/the-power-of-trust.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/the-power-of-trust.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Xfce4 Goodies</h2>
+		<p>为了安装 <span class="caps">XFCE4</span> 下的一个看图工具要安装 <code>Ristretto Image Viewer</code> 这个软件，结果就一次性装上了这么多的东东：</p>
+
+<pre><code>Setting up libtagc0:amd64 (1.7.2-1)      
+Setting up libhal1 (0.5.14-8)
+Setting up libhal-storage1 (0.5.14-8)      
+Setting up libthunar-vfs-1-common (1.2.0-3)      
+Setting up libthunar-vfs-1-2 (1.2.0-3+b1)      
+Setting up squeeze (0.2.3-12)      
+Setting up libxfcegui4-4 (4.8.1-5)      
+Setting up psutils (1.17.dfsg-1)      
+Setting up a2ps (1:4.14-1.1)      
+Setting up xfprint4 (4.6.1-3)      
+Setting up libburn4 (1.2.2-2)      
+Setting up libjte1 (1.19-1)      
+Setting up libisofs6 (1.2.2-1)      
+Setting up libunique-1.0-0 (1.1.6-4)      
+Setting up mousepad (0.2.16-6)      
+Setting up ristretto (0.3.7-1)      
+Setting up thunar-archive-plugin (0.3.0-4)      
+Setting up thunar-media-tags-plugin (0.2.0-1)      
+Setting up wdiff (1.1.2-1)      
+Setting up xfburn (0.4.3-5)      
+Setting up xfce4-artwork (0.1.1a~git+20110420-1)      
+Setting up xfce4-battery-plugin (1.0.5-1+b1)      
+Setting up xfce4-clipman (2:1.2.3-1+b1)      
+Setting up xfce4-clipman-plugin (2:1.2.3-1+b1)      
+Setting up xfce4-cpufreq-plugin (1.0.0-4+b1)      
+Setting up xfce4-cpugraph-plugin (1.0.3-1+b1)      
+Setting up xfce4-datetime-plugin (0.6.1-3+b1)      
+Setting up xfce4-dict (0.6.0-5+b1)      
+Setting up xfce4-diskperf-plugin (2.5.4-1+b1)      
+Setting up xfce4-fsguard-plugin (1.0.1-1+b1)      
+Setting up xfce4-genmon-plugin (3.4.0-1+b1)      
+Setting up xfce4-mailwatch-plugin (1.1.0-5+b1)      
+Setting up xfce4-mount-plugin (0.6.4-1+b1)      
+Setting up xfce4-netload-plugin (1.1.0-1+b1)      
+Setting up xfce4-notes (1.7.7-2+b1)      
+Setting up xfce4-notes-plugin (1.7.7-2+b1)      
+Setting up xfce4-places-plugin (1.3.0-1+b1)      
+Setting up xfce4-quicklauncher-plugin (1.9.4-9+b1)      
+Setting up xfce4-sensors-plugin (1.2.5-1+b1)      
+Setting up xfce4-smartbookmark-plugin (0.4.4-1+b1)      
+Setting up xfce4-systemload-plugin (1.1.1-1+b1)      
+Setting up xfce4-timer-plugin (0.6.3-1+b1)      
+Setting up xfce4-verve-plugin (1.0.0-1+b1)      
+Setting up xfce4-wavelan-plugin (0.5.11-1+b1)      
+Setting up xfce4-weather-plugin (0.7.4-3+b1)      
+Setting up xfce4-xkb-plugin (0.5.4.3-1+b1)      
+Setting up xfce4-screenshooter (1.8.1-1+b1)      
+Setting up xfce4-taskmanager (1.0.0-2)      
+Setting up xfce4-volumed (0.1.13-3)      
+Setting up xfce4-goodies (4.8.2)      
+Setting up xfce4-power-manager-data (1.0.11-2)      
+Setting up xfce4-power-manager (1.0.11-2+b1)      
+Setting up hddtemp (0.3-beta15-52)
+</code></pre>
+
+<p>不过还算是好用，因为一直在用 <code>FVWM</code> 的桌面环境，很多小工具都还没有，只能是用到的时候一个一个的找。</p>
+
+<p>不过现在有点担心硬盘不够用了，安装系统的时候给 <code>ROOT</code> 留的空间不过，现在剩下不到 <span class="caps">1GB</span>&nbsp;的空间了。</p>
+
+<pre><code>Filesystem                                              Size  Used Avail Use% Mounted on
+rootfs                                                   19G   18G  654M  97% /
+udev                                                     10M     0   10M   0% /dev
+tmpfs                                                   781M  428K  781M   1% /run
+/dev/disk/by-uuid/b51b2a34-c85d-4f29-8fce-9056c8066077   19G   18G  654M  97% /
+tmpfs                                                   5.0M     0  5.0M   0% /run/lock
+tmpfs                                                   3.1G  8.5M  3.1G   1% /run/shm
+/dev/sda2                                               115M   33M   76M  31% /boot
+/dev/sda4                                               207G  115G   92G  56% /home
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-10 21:48:45&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/xfce4-goodies.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/xfce4-goodies.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Posterous will turn off on April 30, 2013</h2>
+		<p>收到这封邮件的时候我才知道，原来 Posterous 现在是 Twitter&nbsp;的了。</p>
+
+<p>在我个人的印象中 Posterous 也是一个博客服务提供商，他们的特色是可以用邮件来发文章。不过很可惜的是国内用不了这样的服务，就如同 Twitter&nbsp;一样。</p>
+
+<p>再厉害的企业也是有停业甚至倒闭的时候，所有的数据都得要好好备份，等到丢了的时候就后悔莫及了。</p>
+
+<p>Posterous launched in 2008. Our mission was to make it easier to share photos and connect with your social networks. Since joining Twitter almost one year ago, we’ve been able to continue that journey, building features to help you discover and share what’s happening in the world – on an even larger&nbsp;scale. </p>
+
+<p>On April 30th, we will turn off posterous.com and our mobile apps in order to focus 100% of our efforts on Twitter. This means that as of April 30, Posterous Spaces will no longer be available either to view or to&nbsp;edit.</p>
+
+<p>We’d like to thank the millions of Posterous users who have supported us on our incredible journey. We hope to provide you with as easy a transition as possible, and look forward to seeing you on Twitter. Thank&nbsp;you. </p>
+
+<p>Sachin Agarwal, Founder and&nbsp;<span class="caps">CEO</span></p>
+
+<p>.. code-block::&nbsp;python</p>
+
+<pre><code>def joinurl(*args):
+    """Joins multiple urls pieces to one single URL without loosing the root
+    (first element).
+
+    &gt;&gt;&gt; joinurl('/hello/', '/world/')
+    '/hello/world/'
+    """
+    r = []
+    for i, mem in enumerate(args):
+        if i &gt; 0:
+            mem = unicode(mem).lstrip('/')
+        r.append(mem)
+    return join(*r)
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-08 22:41:47&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/posterous-will-turn-off-on-april-30-2013.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/posterous-will-turn-off-on-april-30-2013.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Happy Birthday to Myself</h2>
+		<p>生日快乐！</p>
+
+<p>有蛋糕，有蜡烛，有火龙果，最重要的还有媳妇。</p>
+
+<p>这样的生日很不错。</p>
+
+<p>不过还是跟<a href="/2012/happy-birthday/">去年的生日</a>一样，当天一点都不消停。</p>
+
+<p>希望今年所有的事情都能解决，快乐的生活。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-05 21:31:41&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/happy-birthday-to-myself.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/happy-birthday-to-myself.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Wordpress</h2>
+		<p>个人比较喜欢用 <code>apt-get</code> 的方式来安装软件，包括 wordrepss&nbsp;也使用这种方式，今天升级的时候看到了这样的提示，摘录下来有问题也好查。</p>
+
+<p>wordpress (3.5+dfsg-1) unstable;&nbsp;urgency=low</p>
+
+<p>This version drops the &#8220;twentyten&#8221; theme and introduces the
+  &#8220;twentytwelve&#8221; theme. If your website uses the &#8220;twentyten&#8221; theme
+  you might want to keep it&nbsp;around:</p>
+
+<pre><code>sudo rm /var/lib/wordpress/wp-content/themes/twentyten &amp;&amp; \
+sudo cp -a /usr/share/wordpress/wp-content/themes/twentyten \
+           /var/lib/wordpress/wp-content/themes/
+</code></pre>
+
+<p>The above command assumes that the package has not yet been upgraded.
+  Otherwise you&#8217;ll have to download it from
+  http://wordpress.org/extend/themes/twentyten and unpack it
+  in&nbsp;/var/lib/wordpress/wp-content/themes/.</p>
+
+<p>&#8212; Raphaël Hertzog <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#114;&#116;&#122;&#111;&#103;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#104;&#101;&#114;&#116;&#122;&#111;&#103;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a>  Fri, 21 Dec 2012 14:02:06&nbsp;+0100</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-05 20:55:47&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/wordpress.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/wordpress.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>The Power of Love</h2>
+		<p>我是歌手，昨天晚上黄妈翻唱的这首歌：The Power of&nbsp;Love</p>
+
+<blockquote>
+<p>the power of love
+of lover sleeping&nbsp;tinght</p>
+</blockquote>
+
+<pre>
+The whispers in the morning
+Of lovers sleeping tight
+Are rolling like thunder now
+As I look in your eyes
+I hold on to your body
+And feel each move you make
+Your voice is warm and tender
+A love that I could not forsake
+Cause I am your lady
+And you are my man
+Whenever you reach for me
+I'll do all that I can
+Lost is how I'm feeling lying in your arms
+When the world outside's too
+Much to take
+That all ends when I'm with you
+Even though there may be times
+It seems I'm far away
+Never wonder where I am
+Cause I am always by your side
+We're heading for something
+Somewhere I've never been
+Sometimes I am frightened
+But I'm ready to learn
+Of the power of love
+The sound of your heart beating
+Made it clear
+Suddenly the feeling that I can't go on
+Is light years away
+The power of love 
+</pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-02 14:07:13&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/the-power-of-love.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/the-power-of-love.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>好短的二月</h2>
+		<p>这是一月底的时候的一场雾，算是很大了。不过二月底也就是前两天的时候又来了一次，不比这次小。&nbsp;算是雾霾，持续了差不多一天，一整天都阴湿的很。不过今天还算好，太阳挺不错的，不过还是挺冷的。</p>
+
+<p><img src="/assets/images/2013/IMG_1362.JPG" style="width:320px;" /></p>
+
+<p>28天一个月确实有些短，就这么完了。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-03-01 16:45:03&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/february-ending.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/february-ending.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>NB 的白菜</h2>
+		<p>买了棵白菜，切了一半吃，剩下的一半放了两天就成这个样子了。</p>
+
+<p><img src="/assets/images/2013/IMG_1498.JPG" style="width:320px;" class="img-polaroid" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-02-27 12:51:34&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/20130227.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/20130227.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>KiloServe is Down</h2>
+		<p>这家的vps当初是在 <span class="caps">LEB</span> 上看到的，当时推出年付36.5美金提供一个<span class="caps">365MB</span>内存的vps，Xen架构。从个方面来讲都不错，而且 <span class="caps">LEB</span> 上也没有什么负面的评价，或者是我没有认真看。于是就买了一个用来跑&nbsp;wordpress。</p>
+
+<p>第一年还不错，个方面还算是比较让人满意的。</p>
+
+<p>因为第一年还行，第二年的时候就继续续费了。当时还晚了几天，貌似是正好赶上个假期，不过交了钱之后就马上开了。会继续续费还有一个原因就是，用了一年了，上面的数据我也有一些，懒得迁移。</p>
+
+<p>不过悲剧的事情发生了，前两天vps 突然就连不上去了，ping也不通，KiloServe 的网站也开不了。然后去 <span class="caps">LET</span>&nbsp;上问才知道，这家几个月前就倒闭了。上面有人说我幸运，几天前才停，他们很多都是几个月前就不能用了。而且不只我一个人遇到了这种情况，我发完帖子之后又有两个人在问。</p>
+
+<p>好在上面的数据在一月底的时候做过一次部分的备份。当时媳妇说慢，我就想迁移的，切换成静态的，算是有先见之明吧，还在丢失的数据不多。</p>
+
+<p>不过这么看来这家也还算是不错的，倒闭之后好几个月还有服务器在跑。其实这家一直以来貌似真的没什么负面消息，真是不知道为什么就关门了。</p>
+
+<p>在这里还得吸取教训，买 vps，还是要选择大一点的公司，那个 one man 的 <span class="caps">IDC</span>&nbsp;还是要谨慎。不管是哪家，尽量要月付，这样即便对方关门，损失的也还少些。而且要时时进行数据的备份，不要贪图省事。</p>
+
+<p>切记！</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-02-26 11:30:09&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/kiloserve-is-down.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/kiloserve-is-down.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello Acrylamid</h2>
+		<p>用 Acrylamid&nbsp;重新弄完之后的一篇常规性文章，下次更新还不知道是什么时候呢！</p>
+
+<p>下面的文字使用变量的方式直接输出的，不是敲出来的。</p>
+
+<h1>How about lorem&nbsp;Ipsum?</h1>
+
+<p>Leo habitant tortor lectus nostra blandit inceptos, tellus lobortis primis vehicula, ut dictumst condimentum laoreet rhoncus, fusce suspendisse elementum eros, duis porta. In semper vestibulum auctor conubia, etiam eleifend luctus augue lorem curabitur leo, luctus eleifend tempor class, non vestibulum ligula ac molestie. Porttitor ornare duis&nbsp;dictumst.</p>
+
+<p>Nunc ullamcorper lorem mus mauris ornare mauris, pharetra fermentum est ultrices, donec convallis vitae dictumst litora, parturient natoque risus cras vestibulum. Proin eget pulvinar rhoncus fusce vulputate malesuada, duis tincidunt torquent&nbsp;habitant.</p>
+
+<p>Vivamus tristique viverra sagittis cubilia eleifend mattis proin, habitasse montes ac placerat lacus aenean, nostra suspendisse nisl adipiscing, posuere nibh parturient vestibulum. Potenti cubilia vulputate praesent, tristique et litora volutpat torquent platea vulputate, ligula nascetur commodo adipiscing quis, fringilla pretium metus condimentum, nisl. Egestas aliquam congue augue imperdiet, fames taciti suscipit aptent, suscipit pellentesque vel dictum vitae dapibus sem, aliquam. Primis&nbsp;habitasse.</p>
+
+<p>Risus orci adipiscing lacinia tempor malesuada, orci viverra porttitor nec laoreet lacinia, montes libero fermentum tempus accumsan, nostra tellus massa id. Luctus etiam placerat suscipit molestie class, convallis&nbsp;non.</p>
+
+<p>Odio faucibus senectus montes volutpat cubilia per, feugiat ridiculus curae montes mollis aptent, eleifend fringilla sem tellus sem,. Adipiscing enim fames vulputate fusce donec, per augue lacinia facilisi, habitasse convallis cras placerat eros venenatis, adipiscing lectus ullamcorper semper magna,. Nec aenean tempor ornare venenatis, senectus ante natoque in donec ornare tortor, montes est nonummy dignissim curabitur, natoque maecenas. Id aliquet augue etiam molestie&nbsp;auctor.</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-02-18 15:01:30&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/hello-acrylamid.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/hello-acrylamid.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>HELLO 2013!</h2>
+		<p>在经历了玛雅人传说中的世界末日后，我们很幸运的存活了下来，还要开开心心的生活，虽然路会很漫长，但是希望就在前方。</p>
+
+<p>这里在很久之前是放在 <span class="caps">GAE</span> 上，现在<a href="http://beta4better.appspot.com">链接</a>依旧还存在，不过接触到不是那么方便，虽然之前也不是那么的方便，但是刚开始的时候是很方便的。当时使用的是 Livid 的 Picky 来搭建的一个 blog 站点而已。不过由于自己的懒惰，极少更新，一直荒废。不过上面的文章在 Google&nbsp;上的收录真的很喜人，所以一直不舍得丢弃。</p>
+
+<p>最近研究 Pelican 的时候，发现一个很不错的脚本：<code>pelican-import.py</code>，于是利用他把之前 <span class="caps">GAE</span> 上的文章全部转换成了静态的文件，再经过一些简单的转换放到了这里的一个子目录下，然后再用 Nginx 的 try_files&nbsp;做个简单的匹配，保证之前链接的有效，不至于全是404。</p>
+
+<p>近期我得把这个过程详细的记录一下，现在虽然有印象，过几天估计就忘的一干二净了。年纪愈大记性愈发的不好起来，很多事情过眼就忘记了。</p>
+
+<p>自己的博客经过考虑还是转移到子域名下比较合适：<a href="http://charles.beta4better.me/">charles.beta4better.me</a>，与媳妇的做一下呼应：<a href="http://abby.beta4better.me/">abby.beta4better.me</a>。虽然她用的是动态的，而我用的是静态的。</p>
+
+<p>关于静态博客需要整理一个列表，现在的变体真的是多，而且各种语言的都有，很是壮观。挑一两个看看源码，作为学习这门语言的开始。</p>
+
+<p>其他的这里一般就会很少更新了，有关心的请移步到<a href="http://charles.beta4better.me/">这里</a>，或许会有一些让你感兴趣的文字。</p>
+
+<p>最后更新：2013-02-17&nbsp;14:56</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-02-17 14:56:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//index.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/index.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Personal opinion about bloging</h2>
+		<p>一直在寻找一种比较满足个人不断变化的需要的静态博客程序，后台操作以及客制化越简单越好，因为我不想只是自己用，还想要媳妇也用，全家人都用。静静的坐下来写点东西，留下来会是一笔不小的财富。但是并不是每个人都会用Geek级别的静态博客程序，我希望越简单越好。最好的方式就是，把内容写完，传到Dropbox上，然后网站内容就更新了。</p>
+
+<p>也许你会问为什么不直接用wordpress之类的程序呢，因为我个人觉得这种数据备份不太容易。仅就个人而言，因为没有很好的数据备份习惯，直接导致不小心输入的一条命令全部数据丢失了好几次。前几次因为是存储在Windows的分区上，在我个人的知识范围内，找到了软件，可以恢复。但是后来存到了<span class="caps">XFS</span>分区上，一条命令fdisk导致所有的数据丢失，而且不知道怎么恢复。因此数据的备份真的是很重要，尤其是那些你积累、积攒了好久好久的数据，比如说一些文章、照片、视频之类的。他们在的时候可能不觉得有什么，但是真正丢了要用的时候就会发现怎么就没了呢。</p>
+
+<p>因此在某种程度上说dropbox上的东西似乎还是比较靠谱的，虽然你有段时间不能访问，但是近期发现之前一两年前的东西竟然都在。除了dropbox，还在考虑同步备份到<span class="caps">AWS</span>或者RackSpace上，他们的价钱也不是很贵，而且如此大的公司对待用户的口碑似乎一直都是蛮好的，不惜那个<span class="caps">MS</span>那样，说停就停，说迁移就迁移，用户没有丝毫选择的余地。</p>
+
+<p>本地的备份是必须的，但是对于我这样的人来说，对电脑稍微了解一些，没事的时候会偶尔用用fdisk或者dd之类的命令，太危险了。本地的备份是必须的，但是异地的备份也是很有必要的。我在考虑在家里搞一个机器，硬盘多配一点，专门用来作数据备份。</p>
+
+<p>闲聊了许多，之所以不用wordpress，一是因为备份不方便，而且备份出来的文件不是那么直观，还得后期处理才能用。再有就是跑个wordpress还得用到<span class="caps">PHP</span>和MySQL，对服务器的要求还是有的。这点如果是纯粹的静态文件对服务器的要求会低一些，一个nginx就搞定了。而且这些个人写的文字一般写完了就不会在作大的变动了。从这几方面来讲静态博客体现出来绝对的优势。关键的问题是得简单化，傻瓜化。对终端用户来讲，后端要绝对的透明，用户了解到的就是把用他自己习惯的编辑器来写，写完了点一下保存就可以了。</p>
+
+<p>这对我来说还真的是有点挑战，不过以现在的实力自己闭门造车估计是不可能的了。一直想写python，本意是想自己写，不过因为各种原因，一直进度很慢。Python看了一边又一遍，没能坚持下来，更别说去写点什么东西了。自己的拖延症随着年纪的增加愈发的严重了。真的是那句话：年纪越大，需要考虑的事情就越多。能留给自己的时间就会越少，能静心去做自己喜欢的事情的时间也就越少。很多时候，有些事情似乎只能是想一下，却不能付诸实施。很是惭愧。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-02-08 21:15:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/personal-opinion-about-bloging.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/personal-opinion-about-bloging.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello world!</h2>
+		<p>循例来这么一篇。</p>
+
+<p>这里沉寂了许久许久。</p>
+
+<p>这里现在是之前几个博客文章的合集，也是仅剩下来这么几篇。</p>
+
+<p>接连几次的数据丢失让我损失了太多的东西，还好有些是放在 <span class="caps">GAE</span>
+上的，还有一些是放在 Dropbox&nbsp;上，现在看来这两个地方还是相对靠谱一些。</p>
+
+<p>这里现在使用的是类似 svbtle 的主题：<a href="https://github.com/gravityonmars/wp-svbtle">wp-svbtle</a>，有兴趣的可以尝试下。</p>
+
+<p>希望我能够在这里坚持写一些文字。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-28 04:10:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/hello-svbtle.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/hello-svbtle.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Wordpress的备份和恢复</h2>
+		<p>Mysql数据库的一个特点，吃什么吐什么，不会做什么特殊处理。这是在网上看到的，个人感觉挺好，挺地道的。</p>
+
+<p>关于Linux啊，MySQL啊，Wordpress啊，什么的，现在只是处在使用的程度，没能力做什么二次开发。不过数据还是必须一定要备份好的，不然若干年的积累不小心付诸东流，丢掉了，甚是可惜，亦很是让人伤心。尤其是用Wordpress写的文章，那可都是一个一个字母敲出来的。绝对的人生财富，相当大的一笔财富。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-28 03:16:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/wordpress-backup-and-restore.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/wordpress-backup-and-restore.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Obtvse Deploy Howtos</h2>
+		<p>vps&nbsp;环境介绍：</p>
+
+<p>Hostigation 的 vps，开始的时候用的是年付30美金的那种，<span class="caps">128MB</span> 的内存，前两天做了下升级，内存加到<span class="caps">512MB</span>，重新安装的系统 Debian Squeeze。用下面的命令安装的&nbsp;Apache2，不过后来想想貌似用不到：</p>
+
+<pre><code>apt-get install libapache2-mod-passenger
+</code></pre>
+
+<p>用 <span class="caps">RVM</span> 来安装 Ruby 和 Rails，具体请参考 <span class="caps">RVM</span>&nbsp;的网站，简单的两条命令如下：</p>
+
+<pre><code>curl
+
+For Ruby / Ruby HEAD (MRI, Rubinius, <span class="amp">&amp;</span> <span class="caps">REE</span>), install the following:
+    ruby: /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+</code></pre>
+
+<p>按照要求安转一下就好：</p>
+
+<pre><code>apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+</code></pre>
+
+<p>完成之后到 obtvse&nbsp;的目录下执行：</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>如果得到如下的错误提示：</p>
+
+<pre><code>Installing pg (0.13.2) with native extensions
+Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+</code></pre>
+
+<p>需要安装下这个库：</p>
+
+<pre><code>apt-get install libpq-dev
+</code></pre>
+
+<p>然后继续用 <code>bundle install</code> 完成上一步操作。再接下来执行：</p>
+
+<pre><code>rake db:migrate
+</code></pre>
+
+<p>可能会遇到这样的问题：</p>
+
+<pre><code>rake aborted!
+Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.
+</code></pre>
+
+<p>解决办法是在 Gemfile&nbsp;中加入一行：</p>
+
+<pre><code>gem execjs
+</code></pre>
+
+<p>然后重新执行 <code>bundle install</code> 和 <code>rake db:migrate</code>。然后就<span class="caps">OK</span>了。</p>
+
+<p>虽然之前用 apt 安装了 libapache2-mod-passenger，不过因为 ruby 使用 <span class="caps">RVM</span> 安装的，版本应该是不对应的，所以还得用 gem&nbsp;重新安装下。</p>
+
+<pre><code>gem install passenger
+</code></pre>
+
+<p>然后执行：</p>
+
+<pre><code>passenger-install-apache2
+</code></pre>
+
+<p>按照提示完成操作，应该是有一些必要的库文件要安装：</p>
+
+<pre><code>apt-get install libcurl4-openssl-dev
+apt-get install apache2-prefork-dev
+apt-get install libapr1-dev
+apt-get install libaprutil1-devssenger-install-apache2
+</code></pre>
+
+<p>我自己的 vps 上提示要安装上面的这些。完成后会看到这样的提示，需要将下面的三行写入到 Apache&nbsp;的配置文件中。</p>
+
+<pre><code>LoadModule passenger_module /home/beta4better/.rvm/gems/ruby-1.9.3-p374/gems/passenger-3.0.19/ext/apache2/mod_passenger.so
+PassengerRoot /home/beta4better/.rvm/gems/ruby-1.9.3-p374/gems/passenger-3.0.19
+PassengerRuby /home/beta4better/.rvm/wrappers/ruby-1.9.3-p374/ruby
+</code></pre>
+
+<p>第一行放到 <code>/etc/apache2/mods-enabled/passenger.load</code> 中。后两行放到 <code>/etc/apache2/mods-enabled/passenger.conf</code> 中。然后虚拟主机的配置文件参考下面的：</p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+   ServerName www.yourhost.com
+   # !!! Be sure to point DocumentRoot to 'public'!
+   DocumentRoot /somewhere/public
+   &lt;Directory /somewhere/public&gt;
+      # This relaxes Apache security settings.
+      AllowOverride all
+      # MultiViews must be turned off.
+      Options -MultiViews
+   &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>之后在 obtvse 里面做一些必要的设置就可以用了，记得要重新启动一次&nbsp;Apache。</p>
+
+<pre><code>service apache2 restart
+</code></pre>
+
+<p>后记：</p>
+
+<p>以上文字或许有些笔误，仅供留存后忘，有地可查，具体情况请酌情修改。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-22 10:36:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/obtvse-deploy-howto.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/obtvse-deploy-howto.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Debian下设置正确的屏幕分辨率</h2>
+		<p>起因如下，在一台U3400处理器的笔记本上装的 Debian Wheezy 屏幕分辨率1280x800，正常显示；但是在2012年刚买的一台准系统上，配的处理器是I5-2320，装完 Debian Squeeze 后显示器的分辨率一直达不到1980x1650，看着很别扭，升级成&nbsp;Wheezy后依旧不行…… </p>
+
+<p>同一台机器，之前在安装 FreeBSD&nbsp;的时候也是有这样的问题，屏幕分辨率不正确，要重新编译内核才行。</p>
+
+<p>一开始的时候我觉得会是 Squeeze 的版本太低，于是就升级成了 Wheezy，但屏幕看上去依旧是扁扁的。联想到之前用 FreeBSD 的情况，我觉得应该是驱动程序的问题，有 intel 的驱动不使用，而是在用 <span class="caps">VESA</span> 的通用设备驱动。于是我扁把 <span class="caps">VESA</span> 的通用驱动删除，重启。果真启动 X&nbsp;就黑屏了。</p>
+
+<p>至此位置，正确的笔记本和不正常的准系统上配置不一样的就是内核了。
+笔记本上的内核是3.2，虽然2.6并存但是如果用2.6启动的话起不来。
+于是乎我便把准系统上的内核也安装了个3.2的内核。
+重启一切问题解决。系统自动配用 intel&nbsp;的驱动，一切<span class="caps">OK</span>。</p>
+
+<p>记下来已被后查。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-17 10:49:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/screen-resolution-adjustment-using-intel-2nd-generation-cpu.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/screen-resolution-adjustment-using-intel-2nd-generation-cpu.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Debian Wireless Network Howto</h2>
+		<p>简单的总结下 Debia&nbsp;下无线网络的使用方法，备日后查用，仅此。</p>
+
+<p>有线网卡，动态获取<span class="caps">IP</span>地址：</p>
+
+<pre><code>alow-hotplug eth0
+iface eth0 inet dhcp
+</code></pre>
+
+<p>无线<span class="caps">WIFI</span>，没有密码加密的：</p>
+
+<pre><code>iface wlan0 inet dhcp
+    wireless-essid wifi-ssid
+</code></pre>
+
+<p>有密码的：</p>
+
+<pre><code>iface wlan0 inet dhcp
+    wpa-ssid wifi-ssid
+    wpa-psk wifi-password
+</code></pre>
+
+<p>如果你和我一样，不习惯用图形的无线管理软件，只是用命令行的方式，开启<span class="caps">WIFI</span>就可以，而且需要切换网络，那么可以在 <code>/etc/network/interface</code> 里面做一个类似下面这样的配置：</p>
+
+<pre><code>iface home inet dhcp
+    wpa-ssid wifi-ssid
+    wpa-psk wifi-password
+
+iface work inet dhcp
+    wpa-ssid wifi-ssid
+    wpa-psk wifi-password
+</code></pre>
+
+<p>在家里的时候用这条命令开启无线：</p>
+
+<pre><code>ifup wlan0=home
+</code></pre>
+
+<p>在公司的时候用这条命令开启无线：</p>
+
+<pre><code>ifup wlan0=work
+</code></pre>
+
+<p>这样我觉得还是挺方便的。到一个新的地方的时候就在配置文件里面新加几行配置就好。</p>
+
+<p>记录已被后查。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-06 03:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/debian-wireless-network-howto.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/debian-wireless-network-howto.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello 2013</h2>
+		<p>每年一度的年终总结时间，每每我都会拖到一月开始的时候才会开始写，而更多的时候仅仅是在头脑里面想一想，希望今年能够写下来一些文字……</p>
+
+<p>现在已经是1月4号了。</p>
+
+<p>2012年落地的最重要的一件事应该说是：“结婚和买房”。最庆幸的事情便是娶了个好媳妇，找了个好老娘。</p>
+
+<p>其实这两件事情一直以来觉得离着挺遥远的，不过当真的做完了之后感觉还是挺良好的。</p>
+
+<p>房子看的着实让人筋疲力尽：优城邦让人等的毫无脾气；生态城让人感觉太过遥远；中海社区确实壮观，不过置业顾问的态度让人很受打击；万达广场却也不过，不过价钱让人望而却步，而且十分的坚挺。但是一个突然的机会遇到了万达顶和次顶的特价房，虽然是高高的30层，风景不错，不过高度让人觉得有些心悸。</p>
+
+<p><strong>Update</strong></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-04 03:06:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/2013-01-04-hello-2013.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/2013-01-04-hello-2013.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello 2013</h2>
+		<p>每年一度的年终总结时间，每每我都会拖到一月开始的时候才会开始写，而更多的时候仅仅是在头脑里面想一想，希望今年能够写下来一些文字……</p>
+
+<p>现在已经是1月4号了。</p>
+
+<p>2012年落地的最重要的一件事应该说是：“结婚和买房”。最庆幸的事情便是娶了个好媳妇，找了个好老娘。</p>
+
+<p>其实这两件事情一直以来觉得离着挺遥远的，不过当真的做完了之后感觉还是挺良好的。</p>
+
+<p>房子看的着实让人筋疲力尽：优城邦让人等的毫无脾气；生态城让人感觉太过遥远；中海社区确实壮观，不过置业顾问的态度让人很受打击；万达广场却也不过，不过价钱让人望而却步，而且十分的坚挺。但是一个突然的机会遇到了万达顶和次顶的特价房，虽然是高高的30层，风景不错，不过高度让人觉得有些心悸。</p>
+
+<p><strong>Update</strong></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2013-01-04 03:06:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2013/2013-01-04-hello-2013.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2013/2013-01-04-hello-2013.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>让人又爱又恨的FreeBSD</h2>
+		<p>这两天在拼命地折腾 FreeBSD，其实主要还是在 Intel 的集成显卡的驱动上，用 <span class="caps">VESA</span>&nbsp;来驱动的话不是那么理想。</p>
+
+<p>笔记本上1280x800的分辨率是正常的，不过逐行刷新卡的要命。而在台式机上 <span class="caps">HD</span> Graphics&nbsp;的显卡分辨貌似只能到1280x1024，在最佳分辨率是1680x1050的显示器上字体发虚，觉得很别扭。</p>
+
+<p>好在现在社区提供一种方法，用 <code>WITH_NEW_ORG</code> 和 <code>WITH_KMS</code> 重新编译整个系统和&nbsp;xf86-video-intel，这样分辨率正常，不过不能在控制台和图形界面之间切换，启动图形界面后要切换到控制台就会花屏，而直接退出图形界面的话会直接黑屏，暂时无解。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-10-15 14:08:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/freebsd.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/freebsd.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>7月12日笔记</h2>
+		<p>实在想不出来用什么名字好了，就用这个吧，算作是12号的笔记。</p>
+
+<p>天气：晴</p>
+
+<h3>前言</h3>
+
+<p>这几日以来的第一个晴天吧，青岛的雨，要么许久不下，要下的时候会持续一整天的下。昨天晚上算是个例外，雷阵雨，还挺大。</p>
+
+<p>Abby 同学的工作算是又有着落了。从 H&nbsp;公司离开去卖轮胎，再到现在去卖猫食。虽然有些坎坷，但是终还是一种经历，比我这样毕业后就一直在一家公司呆着要好，至少见识了各式各样的公司，也接触了各种各样的人。</p>
+
+<p>昨天公司办公室正式布置，晚上过去小帮了一下。办公室很明亮，也很气派。晚上的聚餐也很和睦，像是一家人。我觉得 Abby&nbsp;同学会发大财的，哈哈……</p>
+
+<p>上周五证领了之后去办了贷款，正好赶上利息下调，还算是蛮顺利的。要等一个周左右的时间才能去签贷款合同，这段时间算是可以好好休息了。</p>
+
+<p>周末天气不好，没有出门，在家琢磨了 Obtvse 好久，不过最终还是没能配置好，拖到了昨天晚上，竟然奇迹般的成功了。<span class="caps">RVM</span> 的网站变化挺大，安装方式也跟之前不一样了，于是把之前安装的 <span class="caps">RVM</span> 删掉重新装了一次，之后通过 Passenger 重新安装Nginx，竟然奇迹般的把 Obtvse&nbsp;运行了起来，</p>
+
+<h2>什么是 Obtvse&nbsp;？</h2>
+
+<p>Obtvse 使用 ruby 实现的，另外我还找到了3个 python 的版本，样子长的都差不多，功能也类似。黑白风，简洁版的 blog 程序，可以让人专注于写作。跟 jekyll 和 octpress&nbsp;推崇的理念差不多。</p>
+
+<h2>关于博客</h2>
+
+<p>我一直计划这要写一篇关于博客的文章，说说自己的一些想法。</p>
+
+<p>所谓博客，写者也。以十指之韵，抒胸中之志。</p>
+
+<ol>
+<li>为什么要写博客？</li>
+</ol>
+
+<p>每个人对这个问题的回答都会不一样，在我自己看来，博客也是一种积累。每每看到别人的博客归档里有四、五年的存档，很是羡慕。我大概也是在四、五年前开始断断续续的写过一些，不过因为当时折腾的成分比较多，数据都没能够留存下来。不仅仅是服务器上的数据，有很多本地的数据也都没有留下来多少。少年轻狂吧。不过这些数据，只有到丢了之后才会想到重要性。</p>
+
+<p>记得许久之前，有一个叫做“阳光艾芙”的博客，博主经常会写一些游览的文字，还配有一些拍的很不错的图片，经常去看。主题用的是 wordpress&nbsp;的默认主题，只不过修改背景和链接的颜色。不过现在也已经不能访问了。</p>
+
+<ol>
+<li>博客程序</li>
+</ol>
+
+<p>上面提到的 wordpress 便是很有名的一款博客程序：成熟，用户量大，但是也渐显臃肿了。只要服务器支持 <span class="caps">PHP</span> 就可以运行，而且有各种各样的主题和插件。同时 wordpress.com&nbsp;提供有免费和收费的博客托管服务。</p>
+
+<p>Wordpress 算是动态博客中比较有名的，比较有代表性。类似的还有 typecho ， habari ，textpattern 等。大致这么多吧。像 drupal 应该不能归类到博客程序中来，drupal 这类的更侧重于是 <span class="caps">CMS</span>&nbsp;。</p>
+
+<p>另一种算是半动态半静态的，比如说 movable type 。脚本语言是 perl ， 有开源版本，也有商业版本。后台写完文章之后会生成静态的 <span class="caps">HTML</span> 文件。单就浏览来看能够在一定成都上减轻服务器的负担。不过每写一篇文章都有可能会将整个网站 rebuild&nbsp;一次，这样的话太频繁的更新对服务器的负载也不小。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-07-12 11:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-07-12-notes-of-july.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-07-12-notes-of-july.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hyde</h2>
+		<p>Hyde，一个静态网站生成工具，众多 Static Site Generator&nbsp;之一，但是她有什么特别指出吗？</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-07-11 11:26:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-07-11-hyde.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-07-11-hyde.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>beta4better 的历程回顾</h2>
+		<p>简单地回顾下&nbsp;beta4better，这个名字的由来以及自己在折腾的几个网站……</p>
+
+<p>最开时候注册的是 <span class="caps">ORG</span> 的域名：beta4better.org。还是在米吧-万网那里注册的。不过后来费劲转了出去。这里有一些简短的记录：<a href="http://charles.beta4better.me/2011/domain-transfer/">关于域名转出</a>。可以说是还算顺利，不过需要自己盯着点。</p>
+
+<p>第二个应该就是 <span class="caps">INFO</span> 了。注册的时候就是因为便宜。不过用了一段时间后觉得太长了，加上听人说 <span class="caps">INFO</span>&nbsp;的域名很多都是垃圾站，遂放弃。这个现在看来是最早放弃的了。</p>
+
+<p>第三个就是 <span class="caps">ME</span>。可能是在看到了 <a href="http://about.me/">about.me</a> 这个网站后才产生的想法吧。不过现在看来算是利用的最好的。<a href="http://abby.beta4better.me/">abby.beta4better.me</a> 媳妇的博客，<a href="http://charles.beta4better.me/">charles.beta4better.me</a> 我自己的，<a href="http://beta4better.me/">beta4better.me</a>&nbsp;一个光秃秃的页面而已。</p>
+
+<p>也就这三个了。</p>
+
+<p>作网站，还是要坚持。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-07-10 23:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-07-10-the-history-of-beta4better.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-07-10-the-history-of-beta4better.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>今日宜订婚</h2>
+		<p>就在今日，我和蛋头就要去领证了，合法喽。</p>
+
+<p>现在是午夜12点半，再过几个小时我们就要去民政局领结婚证了，呼呼，很兴奋哦。</p>
+
+<p>前几天连日的高温、燥热，昨天又下了一天的雨，希望天亮了之后会是个好天气。蛋头已经睡着了，我一会也要去睡觉了，休息好，明天高高兴兴的去。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-07-06 00:26:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-07-06-get-married.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-07-06-get-married.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>生命的力量</h2>
+		<p>自从给滴水观音换了个大盆，长的愈发的旺盛了，不过老叶子有一些偏色。</p>
+
+<p><img alt="滴水观音" src="/assets/images/2012/06/dishlia-1.jpg" title="生命的力量-滴水观音" /></p>
+
+<p><img alt="滴水观音" src="/assets/images/2012/06/dishlia-2.jpg" title="生命的力量-滴水观音" /></p>
+
+<p><a href="/2012/04/kaffir-lily.html">上次给君子兰拍照</a>的时候是在一个小盆，里面刚长出芽来。4粒种子发芽了3粒，另一个找不到了，现在看来长势很不错哦。</p>
+
+<p><img alt="君子兰" src="/assets/images/2012/06/kaffir-lily-1.jpg" title="生命的力量 君子兰" /></p>
+
+<p><img alt="君子兰" src="/assets/images/2012/06/kaffir-lily-2.jpg" title="生命的力量 君子兰" /></p>
+
+<p>这两天家里开始收麦子了，不过天气不太给力，阴阴的。</p>
+
+<p>(<span class="caps">EOL</span>)</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-06-16 10:47:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-06-16-the-power-of-life.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-06-16-the-power-of-life.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>理发记</h2>
+		<p>昨天请假起个大早去房产交易中心开“无房证明”。这年头有没有房子还得找证明的。</p>
+
+<p>都说房价再降，成交量也在降，不过到了的时候发现已经排了好长好长的队了，买房子的人还真不少。排号到35，被通知下午再来。</p>
+
+<p>我发现一个窗口办一个大概要15分钟，似乎只能到下午了。出去理个发，这几年一直在这家店里，一位大姐给理，不像现在满大街的理发店，找不到一家正经理发的，我只是需要把头发剪短，一个月理不了一次。</p>
+
+<p>理完回房产交易中心发现快到20号了，然后迅速通知<a href="http://abby.beta4better.me/" title="风吹过的夏天">松蛋</a>过来。到了后发现到25号人就不喊号了，还好蛋去问了下，然后就给我们办了，还算顺利。至少比我想象的顺利。</p>
+
+<p>去顺天馄饨吃了个午饭，无比难吃的馄饨。买了个鱼缸，方的，要了条鱼，回家。</p>
+
+<p>(<span class="caps">EOL</span>)</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-06-15 21:32:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-06-15-have-a-haircut.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-06-15-have-a-haircut.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>随想</h2>
+		<p>写在连续搬家两次之后……</p>
+
+<p>写博客这件事对我来说终究还是没有坚持下来。最近一段时间感觉事情愈发地多了起来，三十天内搬家两次，劳神伤财的，不过最终还是稍微的固定了下来。在这个暂时的地方，油烟机可以用，而且有煤气，偶尔蛋头还会去做个饭，蛮幸福的。</p>
+
+<p>现在也可以看电视了，虽然没有什么一定要看的节目，不过电脑开的时间短了，感觉回家吃完饭就挺晚了，荒废了这里……</p>
+
+<p>房子终于还是定了，就在上周日，一个天气说好也好，说不好也不好的日子，接下来的很长一段时间有的忙了。</p>
+
+<p>写博客对我来说终究不太靠谱，就跟我平时刷牙一样：想起来了去刷一下，亦或是连续刷两次；懒的时候好几天都不刷。或许我应该坚持刷牙，做不到一天两次，一天一次也好。</p>
+
+<p>(<span class="caps">EOL</span>)</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-06-13 22:12:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-06-13-random-thought.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-06-13-random-thought.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>周末爬山</h2>
+		<p>奉上两张照片：金银花。摘了晒干了可以泡水喝。</p>
+
+<p><img alt="金银花" src="/assets/images/2012/06/honeysuckle-1.jpg" title="金银花" /></p>
+
+<p><img alt="金银花" src="/assets/images/2012/06/honeysuckle-2.jpg" title="金银花" /></p>
+
+<p>爬山是次要的，大家周末聚到一起玩一玩很是不错。爬到山顶后坐下来吹吹风，吃点东西，感觉好极了。只是蛋太小胆了，不敢往边上靠，站得离山边远远的。</p>
+
+<p><img alt="蛋头" src="/assets/images/2012/06/abbychous.jpg" title="蛋头" /></p>
+
+<p>补一张下山后的回眸图。</p>
+
+<p><img alt="下山路" src="/assets/images/2012/06/hill.jpg" title="下山路" /></p>
+
+<p>(<span class="caps">EOL</span>)</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-06-07 22:59:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-06-07-great-weekend.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-06-07-great-weekend.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>我的那些花儿 君子兰</h2>
+		<p><img src="/assets/images/2012/04/kaffir-lily.png" title="我的那些花儿 君子兰"  alt="我的那些花儿 君子兰" class="right" /></p>
+
+<p>开始养花有段时间了，年前我弟弟结婚的时候去我三姑家，我姑父给我了4粒君子兰的种子，重上了，过了好长好长的时间，最近终于发现发芽了。</p>
+
+<p>我姑父当时说大概35天左右就能发芽，但是我感觉似乎是过了3个月才发芽。4粒种子只有2粒发了芽。看看右边的图片，能不能看到2个发芽的君子兰？</p>
+
+<p><a href="http://abby.beta4better.me/" title="风吹过的夏天">蛋</a>说养花是老年人的行为，晒太阳也是，真是这样吗？</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-04-05 23:46:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-04-05-kaffir-lily.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-04-05-kaffir-lily.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>和风物语</h2>
+		<p><img alt="和风物语" src="/assets/images/2012/04/japan-life-charles-level11.png" title="和风物语 天堂隔壁 level 11" /></p>
+
+<p>和风物语，又叫做 Japan Life，一款很不错的模拟经营游戏，我和<a href="http://abby.beta4better.me/" title="风吹过的夏天">蛋</a>都在玩。看看右边这张游戏截图，11级的时候拍下来的，现在<a href="/2012/02/iphone4-04-11-08.html">白砖</a>上的号已经41级了，<a href="http://abby.beta4better.me/" title="风吹过的夏天">蛋</a>也41级了，哈哈。</p>
+
+<p>一开始的时候她比我快，不过我建了很多小寺庙，升级速度提升了很多，哈哈。</p>
+
+<p>关于游戏我平时玩的不多，也就偶尔会玩玩魔兽世界，台服哦。不过这款游戏说真的还不错，免费的，虽然可以买道具啥的，不过那样就没有意思了。一个游戏而已，平时娱乐一下，放松放松就好，不能太在意了。</p>
+
+<p>我们两个的帐号如下，可以加我们好友，帮忙打扫卫生阿、管理酒店阿、大特卖阿，什么的。</p>
+
+<ol>
+<li>3raxu</li>
+<li>3w789</li>
+<li>3s34x</li>
+</ol>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-04-05 22:55:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-04-05-japan-life.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-04-05-japan-life.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>2012年清明节</h2>
+		<p>去年清明节是4月3号，当时也写过<a href="http://beta4better.appspot.com/20110403">一篇文章</a>来祭奠母亲，当时的blog是放在<span class="caps">GAE</span>上，现在还在，希望明年的时候也在。因为各种原因放弃了<span class="caps">GAE</span>，自己用jekyll来搭建了<a href="/">这个网站</a>来记录一些事情。</p>
+
+<p>跟去年一样，祭奠以下我的母亲，希望她在那边一切都好。</p>
+
+<p>儿子长大了，小弟去年年前也结婚了，小两口日子过的很不错，婚礼办的也很风光，母亲一切放心。我今年预计也能结婚了，母亲大人安好。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-04-04 20:38:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-04-04-tomb-sweeping-day.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-04-04-tomb-sweeping-day.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Rake 0.9.2.2 vs 0.9.2 error</h2>
+		<p>You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2. Using bundle exec may solve&nbsp;this. </p>
+
+<p>If you got rake error as&nbsp;following:</p>
+
+<pre><code>You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2. Using bundle exec may solve this.
+</code></pre>
+
+<p>Using the following to&nbsp;resolve:</p>
+
+<pre><code>bundle update rake
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-22 20:04:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-22-rake-0-9-2-2-vs-0-9-2-error.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-22-rake-0-9-2-2-vs-0-9-2-error.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Setup sync for Chromium</h2>
+		<p>As <a href="http://code.google.com/intl/en/chromium/">Chromium</a>  sync&nbsp;says: </p>
+
+<blockquote>
+<p>Chromium syncs your data with your Google account securely. Keep everything synced or choose what data to sync from this&nbsp;computer.</p>
+</blockquote>
+
+<p>But sync comes with the following&nbsp;error: </p>
+
+<pre><code>The sync server is busy, please try agsin later.
+</code></pre>
+
+<p>I tried several times, each time I try the same error comes, so I decide to switch <a href="http://code.google.com/intl/en/chromium/">Chromium</a>  to <a href="http://www.google.com/chrome">Chrome</a>. You may download it here for b4bit&nbsp;version.</p>
+
+<ul>
+<li><a href="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb">https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</a></li>
+</ul>
+
+<p>Then install the deb file with the following&nbsp;command: </p>
+
+<pre><code>dpkg -i google-chrome-stable_current_amd64.deb
+</code></pre>
+
+<p>Two screen shot for <a href="http://www.google.com/chrome">Google Chrome</a>, sync works, everything&nbsp;synced.</p>
+
+<p><img src="/assets/images/2012/03/google-chrome-sync.png" width="480px" /></p>
+
+<p><img src="/assets/images/2012/03/google-chrome-getting-started.png" width="480px" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-05 21:54:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-05-setup-sync-for-chromium.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-05-setup-sync-for-chromium.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Using socks5 proxy for Chromium</h2>
+		<p>Why I use proxy for a browser? As you know in China, the <span class="caps">GFW</span> block some really nice site, such as <a href="http://twitter.com/">twitter</a>, <a href="http://facebook.com/">facebook</a> and even <a href="http://google.com/">google</a>, so proxy or <span class="caps">VPN</span> is really needed. For <span class="caps">VPN</span>, I do not really need, I just want to browse some sites some times, so a proxy is&nbsp;enough.</p>
+
+<p>In <a href="http://code.google.com/intl/en/chromium/">Chromium</a> option, there&#8217;s a button to set the proxy, but it not works, error show as&nbsp;following: </p>
+
+<blockquote>
+<p>When running Chromium under a supported desktop environment, the system proxy settings will be used. However, either your system is not supported or there was a problem launching your system&nbsp;configuration.</p>
+<p>But you can still configure via the command line. Please see man chromium-browser for more information on flags and environment&nbsp;variables.</p>
+</blockquote>
+
+<p>So I need to launch the Chromium with this&nbsp;command: </p>
+
+<pre><code>chromium-browser --proxy-server=socks5://127.0.0.1:10000
+</code></pre>
+
+<p>Then is&nbsp;works.</p>
+
+<p>Enjoy the&nbsp;internet.</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-05 21:33:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-05-using-socks5-proxy-for-chromium.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-05-using-socks5-proxy-for-chromium.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Type Chinese in emacs under English locale</h2>
+		<p>In order to type Chinese in emacs under English locale, you have to launch emacs with <span class="caps">LANG</span> set to&nbsp;zh_CN.<span class="caps">UTF8</span>: </p>
+
+<pre><code>LANG=zh_CN.UTF8 emacs
+</code></pre>
+
+<p>But first you have generate the zh_CN.<span class="caps">UTF8</span>&nbsp;locale:</p>
+
+<pre><code>sudo dpkg-reconfigure locales
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-05 19:29:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-05-type-chinese-in-emacs-under-english-locale.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-05-type-chinese-in-emacs-under-english-locale.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Debian Squeeze Chinese Howto</h2>
+		<p>After install <a href="/2012/install-debian-squeeze-on-thinkpad-x201i/">Debian Squeeze on my ThinkPad</a>, the first things I have to do is to install some chinese fonts, in order the chinese character display&nbsp;well.</p>
+
+<pre><code>sudo aptitude install ttf-dejavu ttf-wqy-zenhei xfonts-wqy ttf-wqy-microhei ttf-arphic-ukai ttf-arphic-uming
+</code></pre>
+
+<p>And then the second is to install the chinese input method to write blog in Chinese, while not only English, as Chinese is my monther&nbsp;language.</p>
+
+<pre><code>sudo aptitude install scim scim-tables-zh scim-pinyin
+</code></pre>
+
+<p>Now, the chinese character maybe display well, if you do want to use the fonts of Microsoft Windows, take a look at the following&nbsp;guide.</p>
+
+<ul>
+<li><a href="http://edyfox.codecarver.org/html/debian_testing_chinese.html">http://edyfox.codecarver.org/html/debian_testing_chinese.html</a></li>
+</ul>
+
+<p>The final result comes&nbsp;here: </p>
+
+<p><a href="/2012/thinkpad-x201i-upgrade/"><img src="/assets/images/2012/03/thinkpad-x201i-upgrade-chromium.png" class="center" width="480px" /></a></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-05 16:47:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-05-debian-squeeze-chinese-howto.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-05-debian-squeeze-chinese-howto.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Dropbox</h2>
+		<p>下面是我的Dropbox邀请连接，如果你也想用Dropbox这个神奇的工具，可以使用下面的连接，对你没有坏处，会额外赠送<span class="caps">250MB</span>的容量。</p>
+
+<ul>
+<li><a href="http://www.dropbox.com/link/21.YIa6prtuRI.5864f00e35fdf71f">http://www.dropbox.com/link/21.YIa6prtuRI.5864f00e35fdf71f</a></li>
+</ul>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-01 21:51:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-01-dropbox.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-01-dropbox.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Running Jekyll on Mac OS X</h2>
+		<p>自从Mac买回来到现在差不多快一周了，装了一些软件，这两天在配置Jekyll环境，因为现在我主要使用Jekyll写点东西。完全静态的方法，只需要专心地在电脑上开个编辑器敲敲键盘就可以了。</p>
+
+<p>Mac还是第一次用，之前折腾过一整子黑苹果。因为是黑苹果，装完之后各种不完美。最好的情况是只有声卡没有驱动起来。当时用的Intel的平台，不过后来电脑送给我弟弟了，买了个浩鑫的准系统，把处理器、内存、硬盘啥的都放进去了。现在手头没有Intel平台的电脑了，没法折腾了。</p>
+
+<p>不过总的说来，用Mac快一周了，感觉真的很不错。唯一感觉不太好的是Terminal下各种命令和Linux完全不一样，虽然据我了解Mac应该是基于Unix的，可是还是不太一样。比如说，在Linux下删除一个目录一条命令就可以： <code>rm dir_name -rf</code>。但是在Mac下这条命令丝毫不起作用。还是得以后慢慢熟悉Mac。</p>
+
+<p>言归正传，接下来还是说说如何在Mac下配置Jekyll的环境。</p>
+
+<p>首先，安装<a href="https://rvm.beginrescueend.com/support/"><span class="caps">RVM</span></a>（Ruby Version Manager）。我对Mac的文件系统丝毫不了解，还是将ruby全部安装在自己的用户目录下比较好，不会影响整个系统，如果后期出现什么问题，直接把 <code>.rvm</code> 这个目录删掉就好了。</p>
+
+<pre><code>bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+echo '/-s%20%22/home/beta4better/.rvm/scripts/rvm%22 &amp;&amp; . "$HOME/.rvm/scripts/rvm" # Load RVM function' &gt;&gt; ~/.bash_profile
+source ~/.bash_profile
+</code></pre>
+
+<p>然后安装ruby&nbsp;1.8.7。</p>
+
+<pre><code>CC=/usr/bin/gcc-4.2 rvm install 1.8.7
+</code></pre>
+
+<p>最后安装Jekyll。</p>
+
+<pre><code>gem install jekyll
+</code></pre>
+
+<p>上面的几个命令完成了之后Jekyll基本就可以用了，在这之前我还安装了Xcode，从App Store上下载的。还安装了<a href="http://git-scm.com/">Git</a>,主要是安装<span class="caps">RVM</span>的时候用。不过装完了之后在安装<span class="caps">RVM</span>的时候出现了一个错误提示： <code>make not found</code>。解决方法是安装一个叫做<a href="https://github.com/kennethreitz/osx-gcc-installer/downloads">osx-gcc-installer</a>的文件，从这里下载</p>
+
+<ul>
+<li><a href="https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg">https://github.com/downloads/kennethreitz/osx-gcc-installer/<span class="caps">GCC</span>-10.7-v2.pkg</a></li>
+</ul>
+
+<p>上面的问题解决了之后还出现一个问题</p>
+
+<pre><code>.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/timeout.rb:60: [BUG] Segmentation fault
+</code></pre>
+
+<p>解决方法如下</p>
+
+<pre><code>rvm remove 1.8.7
+rvm remove 1.8.7 --gems
+rvm remove 1.8.7 --archive
+CC=/usr/bin/gcc-4.2 rvm install 1.8.7
+</code></pre>
+
+<p>具体原因请参考下面的两个网站</p>
+
+<ul>
+<li>http://jalada.co.uk/2011/07/24/lion-rvm-and-ruby-1-8-7-woes.html</li>
+<li>http://miclle.me/posts/90</li>
+</ul>
+
+<p>差不多就这几个问题吧，解决了Jekyll就可以用了。现在这篇就是在Mac下写的，还是挺方便的。不过从此看来Mac和Linux还是差别挺大的，至少在Terminal下Linux要比Mac方便好多，或许是我对Mac的了解还比较少吧。多多用Mac，慢慢就会都了解了，毕竟Linux用了好多年了，还算是熟悉。</p>
+
+<p>至此，本篇结束。今天是3月1号，春天了吧，不过还是觉得凉凉的，蛋说是“春寒料峭”，哈哈，有道理。今天下雨了，想起了一句话</p>
+
+<blockquote>
+<p>春雨贵如油</p>
+</blockquote>
+
+<p>希望今年有个好收成、好年景！</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-03-01 20:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-03-01-running-jekyll-on-mac-os-x.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-03-01-running-jekyll-on-mac-os-x.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>iPhone4 baseband 04.11.08 unlock</h2>
+		<p><a href="/2012/02/iphone4-04-11-08.html">上次提到杏从日本带回来了一部iPhone4</a>，不过基带被升级成了04.11.08，在国内现在还不能用，没有能解锁的卡贴。最近网络上吵的沸沸扬扬的，说出来解锁方法了，于是乎我在网上找了两个晚上，找到了两篇文字，尝试了一下，根本走不下去，按照文字上提到的方法。也就是说现在还是解锁不了，只能等3月中旬看看，说到时候有卡贴会出来。</p>
+
+<p>总结一下，网络上现在提到的解锁方法大致有两种：</p>
+
+<ul>
+<li>添加Cydia源：http://repo.bingner.com，安装一个叫做<span class="caps">SAM</span>的软件</li>
+<li>添加Cydia源：http://cydia.myrepospace.com/iUnlockerz/，安装一个叫做React0r</li>
+</ul>
+
+<p>暂且记录在这里，等待，毕竟不是Hacker.</p>
+
+<p>希望砖头能够早日起死回生⋯⋯</p>
+
+<p>2012年2月29日，难得啊，这个月有29天。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-29 22:20:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-29-iphone4-baseband-04-11-08-unlock.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-29-iphone4-baseband-04-11-08-unlock.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Emacs Markdown Mode</h2>
+		<p><a href="/2012/02/install-debian-squeeze-on-thinkpad-x201i.html">安装好了系统</a>之后，又设置了Jekyll，现在安心在Emacs下用Markdown写东西了。</p>
+
+<p>幸好，emacs有个markdown的插件，可以支持markdown语法高亮显示，装上去觉得还不错。&nbsp;安装方法具体请参照这里：</p>
+
+<ul>
+<li><a href="http://jblevins.org/projects/markdown-mode/">http://jblevins.org/projects/markdown-mode/</a></li>
+</ul>
+
+<p>在Debian下安装更简单：</p>
+
+<pre><code> apitude install emacs emacs-goodies-el
+</code></pre>
+
+<p>这个网站还有不少好文章，有空多去看看，貌似还有不少emacs的小技巧。</p>
+
+<p>至于markdown，语法这里有详细的介绍：</p>
+
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a></li>
+</ul>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-27 22:17:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-27-emacs-makrdown-mode.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-27-emacs-makrdown-mode.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>iPhone4 04.11.08</h2>
+		<p>自从iPhone在中国发布后，现在用iPhone的人是越来越多了，貌似现在都快成了大街货了，人人手里都有一个，iPhone在中国还有了一个另外的名字：“爱疯”。有多少人因为这个而发疯阿！</p>
+
+<p><img src="/assets/images/2012/02/iphone4-04-11-08.png" class="right" /></p>
+
+<p>iPhone是一部智能手机吧，关于智能手机我本身没什么兴趣，在我看来手机的功能也就是打打电话、发发短信而已。至于正真的沟通还是面对面的比较好，电话里毕竟不是什么都能说清楚的。还是像古代那样比较好，我想你了就会去看你，不管千里万里。用上智能手机就会时不时地去看手机，甚至现在有很多人吃饭的时候，排队的时候都在低着头看手机……</p>
+
+<p>对于iPhone我是不会去买的，贵的要死。买手机的钱都快赶上一台电脑了，真不是一般的贵。不过或许是机缘巧合，杏从日本回来带回来了一部iPhone4。在日本的时候捡到的，不过一激动给摔了，后盖摔的还得厉害，基本上是碎了，前屏幕也摔裂了一块，于是乎就留给我了。</p>
+
+<p>在国内要想使用日本的iPhone，必须要卡贴解锁网络才行。但是这个iPhone已经是iOS5的系统了，基带也升级成了04.11.08，而国内还没有针对5的卡贴，也就是说这个iPhone4在我手里就是一块砖头。花了一晚上的时候在<a href="http://bbs.weiphone.com/">威锋论坛</a>上看帖子，没有找到一个关于如何降级的帖子。</p>
+
+<p>于是乎我只能解锁，当个touch用吧。还好越狱还算成功，就先当个touch用吧，等5的卡贴出来。这两天去信息问过，国外已经出卡贴了，不过很贵，400多块钱，都不敢进货。网上也有卖这种带锁的砖头的，哈哈。等着吧，等国产的卡贴出来。这段时间就当touch用吧，起码分辨率比上一代touch强多了。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-27 21:13:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-27-iphone4-04-11-08.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-27-iphone4-04-11-08.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Wierd Jekyll Generate Problem</h2>
+		<p>No files generate in the <code>_site</code> directory.</p>
+
+<pre><code>ERROR no access permission to `/'
+</code></pre>
+
+<p>Solution: <a href="http://www.cnblogs.com/heart-runner/archive/2012/02/14/2351136.html">http://www.cnblogs.com/heart-runner/archive/2012/02/14/2351136.html</a></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-21 00:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-21-wierd-jekyll-problem.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-21-wierd-jekyll-problem.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Install Debian Squeeze on ThinkPad X201i</h2>
+		<p>ThinkPad X201i is a 12inch laptop without <span class="caps">CD</span>-<span class="caps">ROM</span>, so I have to use the <span class="caps">USB</span> disk to install the operating&nbsp;system.</p>
+
+<h2>Introduction</h2>
+
+<p><strong>ThinkPad X201i&nbsp;Spec:</strong></p>
+
+<ul>
+<li><span class="caps">CPU</span>: Intel(R) Celeron(R) <span class="caps">CPU</span> U3400 @&nbsp;1.07GHz</li>
+<li>Memory: <a href="/2012/thinkpad-x201i-upgrade/"><span class="caps">2GB</span> upgrade to&nbsp;<span class="caps">8GB</span></a></li>
+<li><span class="caps">HD</span>: <span class="caps">WDC</span>&nbsp;<span class="caps">WD2500BEVT</span>-<span class="caps">08A23T1</span></li>
+</ul>
+
+<p>I really want upgrade the <span class="caps">HD</span> to <span class="caps">SSD</span>, but not allowed&nbsp;yet.</p>
+
+<p><strong><span class="caps">OS</span>:</strong></p>
+
+<ul>
+<li>Debian Squeeze:  <em>debian-6.0.3-amd64-businesscard.iso</em></li>
+</ul>
+
+<p><strong>Boot&nbsp;tool:</strong></p>
+
+<ul>
+<li>UNetBoot: <em>unetbootin-windows-563.exe</em></li>
+<li><span class="caps">USB</span>&nbsp;Disk</li>
+</ul>
+
+<p>I use the windows version of UNetBoot, as the linux editon seems not work&nbsp;well. </p>
+
+<p>Write the <em>debian-6.0.3-amd64-businesscard.iso</em> to <span class="caps">USB</span> disk, boot the laptop with the <span class="caps">USB</span> disk, choose expert mode to install Debian using the stable edition: Squeeze. I also try the testing version, diff greatly, I used to Squeeze and&nbsp;Lenny.</p>
+
+<p>Just install the base system, and then boot to the operating system, continous to install the other&nbsp;wares.</p>
+
+<h2>Desktop&nbsp;Enviroment</h2>
+
+<p>The command line mode is <span class="caps">OK</span> for server, but not so convenient for daily use. So the desktop enviroment is necessary, I choose the xfce4, light and quick. Install xfce4 is easy, just&nbsp;type:</p>
+
+<pre><code>sudo aptitude install xfce4
+</code></pre>
+
+<p>If you want to use some tools provided by xfce4, such as get the temp of <span class="caps">HDD</span>&nbsp;type:</p>
+
+<pre><code>sudo aptitude install xfce4-goodies
+</code></pre>
+
+<p>Then you can get the temp of you disk using&nbsp;:</p>
+
+<pre><code>sudo hddtemp /dev/sda
+/dev/sda: WDC WD2500BEVT-08A23T1: 34°C
+</code></pre>
+
+<p>If you do not want to type startx after you login, install the&nbsp;xdm:</p>
+
+<pre><code>sudo aptitude install xdm
+</code></pre>
+
+<p>There are many display manager, such as gdm or slim, xdm is just simple enough for my&nbsp;use. </p>
+
+<p>Now you get a working linux desktop system. Help&nbsp;yourself!</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-18 16:06:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-18-install-debian-squeeze-on-thinkpad-x201i.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-18-install-debian-squeeze-on-thinkpad-x201i.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Blog language Chinese or English</h2>
+		<p>Why do I have so strange&nbsp;question?</p>
+
+<p>Simple, the operating system is not Windows, as it&#8217;s expensive, very very expensive in China. And in China, there seems no one want to pay to Microsoft for Windows, there&#8217;s some special edition fo Windows in China, called&nbsp;D-edition.</p>
+
+<p>I install Windows 7 professional on my <span class="caps">PC</span> at home, which I used as a amusement station, watching some video or playing some games, such as the World of Warcraft. On my laptop, I install Linux, which is free to use, and there&#8217;s many many free software to choose. The only pity is that I cannot play the World of Warcraft using Linux&nbsp;now.</p>
+
+<p>So I am using Linux now, the Debian Squeeze. Sure I install the Chinese input method - scim-pinyin. And I do some ajust to display Chinese character correctly. Now everything goes well but not so good as under the Windows operating system. And there&#8217;s also some problem between the emacs and scim, I have to use <code>LAND=zh.CN_UTF8</code> emacs to lanch the emacs to input&nbsp;Chinese.</p>
+
+<p>Chinese is my first language, English is the second. It is not so easy for to write blog using English I have to say, not so well compare with Chinese. But the post wrote with Chinese is not so carelly express my opinion&nbsp;too.</p>
+
+<p>So I choose to use English as my blog&nbsp;language.</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-18 15:25:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-18-blog-language-chinese-or-english.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-18-blog-language-chinese-or-english.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Happy Birthday!</h2>
+		<p>2012年2月15号，农历正月二十四，28岁生日。</p>
+
+<p>如蛋所说，半年来头一次9点多回家，貌似是预示了我今年的命运！</p>
+
+<p>虽然是满肚子的抱怨，但是回到家看到了现成的饭：鸡蛋、面条、西红柿、土豆还有蛋糕，瞬间的不高兴都没了，感谢蛋，陪我过28岁的生日。</p>
+
+<p>虽然是2012，今年肯定会不寻常。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-16 11:11:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-16-happy-birthday.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-16-happy-birthday.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Debian vs Ubuntu</h2>
+		<p>自从上次将<a href="/">笔记本的内存升级到了<span class="caps">8GB</span></a>后，最近便一直在折腾系统。我的最终想法是选一款简单够用的系统，装上几个平时常用的软件就<span class="caps">OK</span>。越简单越好。</p>
+
+<p>Windows肯定是不能选的，对于微软的Windows，我的感觉是：</p>
+
+<ul>
+<li>现在针对Windows的各类流氓软件太多，防不胜防；</li>
+<li>Windows下磁盘读写太频繁，动不动硬盘灯就会亮起来； </li>
+<li>在Windows上安装Jekyll之类的工具完全不了解；</li>
+<li>Windows下的硬盘数据加密也是从来没有接触过；</li>
+<li>最后一点，Windows买不起，一直在用D版的；</li>
+</ul>
+
+<p>基于上面的种种原因，还是要用Linux的。至于Linux，有着太多的发行版，比如：Debian、Ubuntu、Gentoo、Arch、Fedora、CentOS等等等等，可以说是数不胜数。但对我来说比较熟悉的还是前三个：Debian、Ubuntu和Gentoo。内存装上去之后我就拿Debian来装系统了，一是熟悉，而是<span class="caps">VPS</span>上用的全是这个，方便数据的部署和迁移。</p>
+
+<p>使用debian-6.0.3-amd64-businesscard.iso这个镜像，通过unetbootin-windows-563.exe写到U盘上来安装，因为ThinkPad&nbsp;X201i是12寸的本，没有光驱。第一次看到了Debian的安装还有专家模式……以前从来没有见过，很专业，定制度很高，基本可以按照你的希望调整整个系统的配置。</p>
+
+<p>我选用的分区方案是带加密功能的<span class="caps">LVM</span>方案。我个人觉得近乎完美，整个过程中除了无线网卡在安装时进行配置外，其他一切<span class="caps">OK</span>。不记得第一次的时候分区类型选的是什么了，要么是ext4，要么是brtfs。后期使用的时候感觉从硬盘读文件延迟很高。用<span class="caps">TAB</span>进行命令补全的时候要顿一会才能出来。</p>
+
+<p>上面这次貌似是在换<span class="caps">8GB</span>内存之前的事情，内存升级后又重新装了一次Debian，也是用用的加密的<span class="caps">LVM</span>方案。不过交换分区默认给分了9.<span class="caps">6GB</span>，惊啊！分区类型选的是<span class="caps">XFS</span>，感觉一切<span class="caps">OK</span>。</p>
+
+<p>其实装好了Debian用着挺舒心的，整个中文字体配置的也算是不错了，不过由于我现在是用Jekyll搭的网站，用markdown语法来写文字，我想用emacs&#8211;因为emacs里面有个markdown的插件，可以高亮显示markdown的语法。不过令人不爽的是emacs里面汉字显示渲染真的是好难看，就像是显示器的分辨率没有调到最好一样，字体变形，怎么看怎么别扭。</p>
+
+<p>因为上面的原因我又想到了ubuntu，因为ubuntu下汉字显示很是不错。至于ubuntu，我很早的时候就用过。当时还是6，我还领过免费发放的安装光盘。现在版本号已经到了11.10。</p>
+
+<p>ubuntu现在分了好几种光盘镜像，alternative、livecd和server吧。如果想用<span class="caps">LVM</span>的分区方案貌似是必须用alternative的光盘，livecd只能用基本的主分区和逻辑分区的方案。</p>
+
+<p>安装过程是曲折的，刚开始的时候么有注意到ubuntu的alternative光盘也有专家模式，我对它默认的lvm分区方案不是很满意。文件系统的类型默认是ext4，交换分区的卷标默认是swap_1，一开始不知道怎么调整。后来注意到了专家模式，这次好了可以完全按照我的意图来分区了，不过要命的是到kernel那一步的时候死活过去不，安装出现错误。我真的不明白，同样是基于debian的系统，安装过程也和debian一样，为啥就会卡在内核安装这一步呢。这与当时换ubuntu的初衷完全不一样了，换了这个系统还不够那折腾的。早知道是这样当时就不折腾了，emacs下面字体难看就难看吧，我换个别的编辑器就<span class="caps">OK</span>的。</p>
+
+<p>这真是：</p>
+
+<blockquote>
+<p>生命在于折腾，生命不止，折腾不息！</p>
+</blockquote>
+
+<p>昨天是28岁的生日，一个毫无希望的招标发布了标书，被折腾到将近晚上九点。白天装ubuntu装了好几次，最后也是不满意。</p>
+
+<p>晚上11点多了最后一次尝试ubuntu也终是已失败而放弃，继续回归debian。晚上回家看结果。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-16 10:47:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-16-debian-vs-ubuntu.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-16-debian-vs-ubuntu.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Thinkpad X201i Upgrade</h2>
+		<p>我的小黑的内存总算是升到8G了，呼呼，感觉不错。</p>
+
+<p>内存是从淘宝上买的，一家叫做<a href="">北京内存</a>的商家，发货速度挺快的。</p>
+
+<p>内存装完了之后又把操作系统重新安装了一遍，Debian Squeeze，&nbsp;用他自身提供的分区方案，交换分区默认分了9.6G……</p>
+
+<p>拆机换内存的时候有个同事过来看，说thinkpad就是thinkpad，螺丝上还有垫帽，螺丝和机身是同一个颜色，如此云云。这个时候我才感觉到thinkpad确实是大品牌阿。</p>
+
+<p>就在前两天的时候另一个同事说X201i这个样子的thinkpad现在没有了，新版的X220系列已经变样子了。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-07 08:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-07-thinkpad-x201i-upgrade.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-07-thinkpad-x201i-upgrade.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Sit down and focus on writing anything specific</h2>
+		<p>It&#8217;s difficult to really sit down and focus on writing anything specific, but hopefully something will&nbsp;emerge!</p>
+
+<p>这两天在从github上拖别人的网站看，无意间看到这么一句话：</p>
+
+<blockquote>
+<p>It&#8217;s difficult to really sit down and focus on writing anything specific, but hopefully something will&nbsp;emerge!</p>
+</blockquote>
+
+<p>确实如此，能够静下来专心的写点什么在现在看来确实也是没有那么的容易，更何况现在的这个社会是有些浮躁的。</p>
+
+<p>但是不管怎么着，我还是得认真的写，仔细的记，感觉自己的记性愈发地不如以前了。上午的事情到下午都能忘记。&nbsp;因此写日志，不为别的，但求能回顾。</p>
+
+<p>温故而知新？&nbsp;或许！</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-02-02 08:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-02-02-20120202.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-02-02-20120202.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Octopress: no such file to load: zlib, openssl</h2>
+		<p>Thinkpad X201i 3249-<span class="caps">MUC</span>, this is the model of my laptop,
+also the right computer building this site. It has been a long time for 
+using this laptop for me making a great effort for&nbsp;me.</p>
+
+<p>But the memory for X201i is just <span class="caps">2GB</span>, I plan to upgrade it to <span class="caps">8GB</span>.
+But 2 from <a href="http://www.taobao.com/">taobao</a>, will be arrived the day after 
+tomorrow&nbsp;maybe.</p>
+
+<p>First time upgrade the memory of laptop, a little&nbsp;exciting.</p>
+
+<p>Last night I reinstall the system from <a href="http://localhost:4000/2012/01/20120124.html">LinuxMint</a> to Debian Squeeze using 
+encryped lvm, feeling greatly&nbsp;now.</p>
+
+<h2>cotopress install&nbsp;problem</h2>
+
+<p>While I install octopress on my laptop, there comes will two&nbsp;problems:</p>
+
+<ul>
+<li><strong>no such file to load &#8212;&nbsp;zlib</strong></li>
+</ul>
+
+<p>install zlib1g and zlib1g-dev, and then come to the source directory of ruby <code>/ext/zlib</code>, run the following&nbsp;command:</p>
+
+<pre><code>ruby extconf.rb &amp;&amp; make &amp;&amp; make install
+</code></pre>
+
+<ul>
+<li><strong>no such file to load &#8212;&nbsp;openssl</strong></li>
+</ul>
+
+<p>install libssl-dev, and then come to the source directory of ruby 
+<code>/ext/openssl</code>, run the following&nbsp;command:</p>
+
+<pre><code>ruby extconf.rb &amp;&amp; make &amp;&amp; make install
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-01-31 00:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-01-31-octopress-no-such-file-to-load-zlib-or-openssl.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-01-31-octopress-no-such-file-to-load-zlib-or-openssl.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>LinuxMint vs Debian</h2>
+		<p>已经晚上9点多了，我叔今天来了，住下了。已经在另一个屋的炕上和我奶奶睡了。</p>
+
+<p>今天太阳还算暖和，风也小了些。</p>
+
+<p>晚上没事把LinuxMint下的所有的配置文件都删掉了，结果xfce的桌面变成了默认的，
+没有了原来的华丽，只得自己手工从头开始配置。&nbsp;只添加了一个面板，加上了几个基本的工具，凑活着先用吧，加多了也是无用。</p>
+
+<p>现在的系统用的是LinuxMint：</p>
+
+<pre><code>Linux mint 3.0.0-1-amd64
+</code></pre>
+
+<p>默认的源是：</p>
+
+<pre><code>deb http://packages.linuxmint.com/ debian main upstream import
+deb http://debian.linuxmint.com/latest testing main contrib non-free
+deb http://security.debian.org/ testing/updates main contrib non-free
+deb http://www.debian-multimedia.org testing main non-free
+</code></pre>
+
+<p>里面大多数都是testing的东西，感觉不怎么放心，有在考虑是不是有必要换回到Debian的stable源，
+因为现在的vps上用的全都是Debian&nbsp;stable，如果换成一样的本地测试<span class="caps">OK</span>的就可以直接迁移到服务器上去了。</p>
+
+<p>我也有在考虑是不是有必要给笔记本再加一条内存，现在感觉<span class="caps">2GB</span>的貌似不太够用。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-01-24 00:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-01-24-linuxmint-vs-debian.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-01-24-linuxmint-vs-debian.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>关于农历春节</h2>
+		<p><strong>新年</strong>，中国的传统节日，现在又叫春节，每年一度，热热闹闹，举家团聚。</p>
+
+<p>新年，每个地方都有每个地方的传统、风俗。不过现在很多的风俗都开始逐渐的淡化了，年味也是越来的越淡了，尤其是现在在外过年的，年的味道早已是越发的淡了。</p>
+
+<p>现在每年我都会回家，一般都是在老奶奶这里，陪着她过年。她年纪大了，不过年的过法在这里我基本上都了解的算是清楚了。传统就是传统，风俗亦是风俗，这个跟迷信没有关系，我觉得因该保留，也是必须得保留，不然还过哪门子，不能怕麻烦。像现在很多人图省事，年夜饭出去吃，那就一点意思都没有了。中国的很多节日正在被西方的节日通化，很多年轻人现在都不知道中国的节日了，不过中国的节日，倒是西方国家的年日都记得很清楚，这样不好。西方的节日过不怕过，但是中国的传统节日必须得过。不过话又说回来，别人怎么过咱们管不着，自己过好自己的节就好。</p>
+
+<p>说说家里年的过法吧，留下些文字也好有个念想。</p>
+
+<p>这几年差不多都是腊月二十九才能到家，放假是从腊月三十到初六，初七上班。</p>
+
+<h2>年三十上午贴春联</h2>
+
+<p>到家之后差不多就得忙着贴对联和过门钱（不知道是不是这样写，这个的大名怎么写不太清楚，家里的叫法）了。以前我印象中都是年三十才会贴对联啥的的，不过这两年家里突然都改习惯了，变成了年二十九贴，提前了一天，不过也有人到最后一天才贴的。今年直到贴完了我才想明白怎么回事，原来老爷子年三十晚上正好赶上他值班（老爷子虽然现在是退休了，但是找了份给学习作安保的工作，就是给人看大门。几个人轮班，今年正好赶上他）。</p>
+
+<h2>年三十下午去谱上请祖先</h2>
+
+<p>这里解释下<strong>谱</strong>这个词。所谓谱者，家谱也。我们村都是同一个姓，都是同宗同族。每到过年的时候全村要请祖先回家过年，然后每个家族也要单独请。今年是在我家，不过貌似去年也似在我家，因为我们在西边的房子空着，请起来方便。不然单独找一家会有些不方便，毕竟每家都要过年的嘛。请的过程很简单，下午三点钟，点着灯笼，抬着烧纸阿、元宝阿，去马路上，把元宝、烧纸都烧了，放两挂鞭炮，就算请回来了。然后个字回家过年。</p>
+
+<p>当然出门之前要各家把自己家作的饭菜摆出来，摆到族谱前面，请回来之后祖先们便是在家过年了。然后晚上煮完水饺之后，离的近的要端水饺过来。请回来之后变会安排人执夜，一组几个小时，轮番回家过年。</p>
+
+<h2>年三十晚上煮水饺、放鞭炮、点灯笼、放拦门棍</h2>
+
+<p>把白天包好的水饺煮了，从现在开始基本每顿都是水饺了。水饺煮好出锅前放一挂鞭。天黑了可以点上灯笼了，然后在每个门口放上一个木棍防止钱财跑出门吧。</p>
+
+<h2>年三十晚上放鞭炮</h2>
+
+<p>十二点的时候，有的人家会放鞭炮，不过我们家从来没有这么做过。半夜十二点，很响的。</p>
+
+<h2>年初一三点钟烧纸、烧香、摆桌子请祖先</h2>
+
+<p>我奶奶最精此道，其他人大多生疏了，我略知一二，因为这几年都是我给她弄的。老奶奶上年纪了，腿脚不利索，再加上眼睛也好了，只能我代劳了。</p>
+
+<p>三点多起来收拾收拾，各家还得摆上桌子，摆好饭菜、水果，请祖先们到家里来吃饭。同时还得再烧纸、烧元宝之类的，给祖先们用。还得点上一根粗粗的、长长的香，可能得能少到上午的。</p>
+
+<p>烧完了纸、元宝，就赶紧吃水饺，小孩子们穿上新衣服，出去拜年喽。</p>
+
+<h2>年初一五点出门磕头、拜年</h2>
+
+<p>五点钟可能是一天中最冷的时候了，我们却要出去挨家长辈去拜年，真的冷。</p>
+
+<h2>拜年完毕，可以玩了</h2>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2012-01-21 00:00:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//2012/2012-01-21-happy-chinese-new-year.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/2012/2012-01-21-happy-chinese-new-year.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>VPS</h2>
+		<p>手头这么多的vps还有几个虚拟主机，现在都不知道该用来做什么了。搭建了几个网站，有blog，也有wiki，但是却都不能坚持更新，现在大部分都闲置了，觉得好可惜。</p>
+
+<p>有些年付的想退款却退不掉。看来以后买vps如果不是十分的便宜绝对不能年付了，一方面是考虑到服务商会跑路的问题，另一方面现在硬件的价格一段时间一个价还是月付比较保险，哪天什么时候硬件降价了，如果年付的话真是会吃亏不少呢……</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-07-03 15:32:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/vps.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/vps.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>早饭</h2>
+		<p>早饭，大家都知道是很重要的，一天中最重要的一顿饭了。</p>
+
+<p>早饭要吃好，午饭要吃饱，晚饭要吃少。</p>
+
+<p>我也在坚持吃早饭了，最近胃一直不太好，是不是的会难受下。不是很难受，稍微吃点健胃消食片就会好些。喝过一段时间的养乐多，也挺管用的，不过就是太贵了，十块钱一板，喝不了几天就没了，或许还是按时吃饭，慢慢养的好。</p>
+
+<p>早饭可能就是那么几样，吃来吃去也没什么大的差别，这样吃多了换另一样。偶尔算了一下，或许是我自己太小气了吧，算计起早饭的价钱来了。</p>
+
+<ul>
+<li>
+<p>泰山火烧，一顿饭两个，一块五毛钱</p>
+</li>
+<li>
+<p>鸡蛋糕，两块钱可以买四个，小个的那种</p>
+</li>
+<li>
+<p>包子，韭菜陷的，两块五毛钱四个</p>
+</li>
+</ul>
+
+<p>大概就是这几种了吧，油条的话一块五毛钱大概能买到四根，不过每个摊位的油条大小不一样，就不能相比较了。</p>
+
+<p>早饭一定要吃，好好的吃，希望自己能够早日把胃养好吧。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-07-03 15:27:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/breakfast.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/breakfast.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110702青岛大雨</h2>
+		<p>下午5点来钟的时候，下了一场大雨，好大的一场。</p>
+
+<p>网上有人说，看一个城市是不是发达，就看他在下了一场大雨后的两个小时能不能迅速排出而不会造成积水。从北京前两天的那场大雨可以看出，北京应该是不算了。青岛的这场也可以说明，青岛也不是……</p>
+
+<p>我们还能再说些什么呢，贴几张图片，手机拍的，效果一般：</p>
+
+<p>[<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-1-300x225.jpg" title="20110702-1" />][]</p>
+
+<p>[<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-2-225x300.jpg" title="20110702-2" />][]</p>
+
+<p>[<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-3-300x225.jpg" title="20110702-3" />][]</p>
+
+<p>[<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-4-300x225.jpg" title="20110702-4" />][]</p>
+
+<p>>
+检验一个城市是否发达，作家龙应台告诉你一个屡试不爽的秘方：最好来一场倾盆大雨，足足下它三个小时，因为它或许有钱建造高楼大厦，却还没有心力来发展下水道，高楼大厦看得见，下水道看不见。你要等一场大雨才能看出它的真面目来。</p>
+
+<p>[<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-1-300x225.jpg" title="20110702-1" />]: http://beta4better.me/wp-content/uploads/2011/07/20110702-1.jpg
+  [<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-2-225x300.jpg" title="20110702-2" />]: http://beta4better.me/wp-content/uploads/2011/07/20110702-2.jpg
+  [<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-3-300x225.jpg" title="20110702-3" />]: http://beta4better.me/wp-content/uploads/2011/07/20110702-3.jpg
+  [<img alt="青岛大雨" src="http://beta4better.me/wp-content/uploads/2011/07/20110702-4-300x225.jpg" title="20110702-4" />]:&nbsp;http://beta4better.me/wp-content/uploads/2011/07/20110702-4.jpg</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-07-03 14:46:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/20110702.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/20110702.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110623</h2>
+		<p>今天下班挺晚的，大概八点半，许久没有这么晚下班了，虽然一直都下班没点。</p>
+
+<p>今天公司里发生了一些事情，感慨下：什么事情只要是提高到战略的角度，就会上纲上线，就什么都没那么容易办了。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-23 15:20:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/20110623.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/20110623.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>CtdlLoginExistingUser</h2>
+		<p>今天服务器上突然出现了下面这个错误：</p>
+
+<p>2011 Jun 22 21:43:05 beta4better CtdlLoginExistingUser((null),&nbsp;jackie)</p>
+
+<p>2011 Jun 22 21:43:06 beta4better CtdlLoginExistingUser((null),&nbsp;jackson)</p>
+
+<p>不知到是什么问题，一直不停的出，重启了服务器也照旧是这样。将进程挨个停掉，发现是这个进程的问题/usr/sbin/citserver。真的是太奇怪了，莫名其妙的。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-22 14:43:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/ctdlloginexistinguser.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/ctdlloginexistinguser.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Linux下添加现有用户到一个已存在的组</h2>
+		<p>会有这个需要是因为迁移VirtualBox的虚拟主机后系统提示当前用户不在某某组，设备无法正常使用，需要添加现在的用户到某个组里去，需要用到这个命令：</p>
+
+<p>usermod -a -G username&nbsp;needed-group</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-08 15:12:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/add-an-existing-user-to-a-group.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/add-an-existing-user-to-a-group.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>关于VirutalBox的四种网络设置</h2>
+		<ul>
+<li>
+<p><span class="caps">NAT</span>：网络地址转换（Network Address&nbsp;Translation），应该是虚拟机要将数据包交给主机，再由主机的的网卡发出去</p>
+</li>
+<li>
+<p>Birdged&nbsp;Network：桥接，这种方式，就是虚拟机与主机平等平坐，两个相当于独立机子，外面的内网里也可以访问我的虚拟机</p>
+</li>
+<li>
+<p>Internal&nbsp;Network：内部网络（可以是虚拟机与虚拟机之间）</p>
+</li>
+<li>
+<p>Host-Only：只与主机通信</p>
+</li>
+</ul>
+
+<p>第一种、第二种、第四种我都尝试过了，确实如上所说。</p>
+
+<p>实在家里实验的，有路由器，给虚拟机开三个网卡就可以了，如果不进行第二种设置，除了主机外其他的电脑访问不了虚拟机。</p>
+
+<p>在VirtualBox里设置好了后还在要配置文件：/etc/network/interfaces里把相应的网卡都添加进去：</p>
+
+<p>allow-hotplug&nbsp;eth0</p>
+
+<p>iface eth0 inet&nbsp;dhcp</p>
+
+<p>allow-hotplug&nbsp;eth1</p>
+
+<p>iface eth1 inet&nbsp;dhcp</p>
+
+<p>allow-hotplug&nbsp;eth2</p>
+
+<p>iface eth2 inet&nbsp;dhcp</p>
+
+<p>图省事全部用的<span class="caps">DHCP</span>。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-08 15:06:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/virtualbox-network-settings.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/virtualbox-network-settings.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>VirtualBox虚拟机迁移后重新启用网卡</h2>
+		<p>在一台机器上用VirtualBox安装Debian，如果把这个Deian转移到另一台装有VirtualBox的机器上会发现启动后不能链接网络了，只需要删除这个文件就可以：</p>
+
+<pre><code>/etc/udev/rules.d/70-persistent-net.rules
+</code></pre>
+
+<p>貌似是<span class="caps">UUID</span>的问题，不过没有仔细研究过。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-08 14:46:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/virtualbox-migration-error.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/virtualbox-migration-error.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110608</h2>
+		<p>广告被google停止投放了，看了看google给出的文档，在<a href="http://www.google.com/support/forum/p/adsense/thread?tid=598c6e58817c93ac&amp;hl=zh-CN">论坛</a>里提问了一下如何申诉，有好心人给了个<a href="https://www.google.com/adsense/support/bin/request.py?contact_type=policy_violation_appeal">链接</a>，刚刚提交了申诉。</p>
+
+<p>同时把评论设成了审核后才可以显示，到后台数据库里把所有的评论全都删掉了。</p>
+
+<p>我的那个天啊，数量惊人啊，半年的时间差不多有6K多条，这人真是有毅力。</p>
+
+<p>希望google能尽快给处理吧，倒不是为了什么广告能赚钱，感觉放着google的广告还是听不错的。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-08 14:35:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/20110608.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/20110608.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110607</h2>
+		<p>相当郁闷的一个晚上，有一个域名被google停止投放广告，因为有过多的垃圾评论没有处理……</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-07 16:28:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/20110607.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/20110607.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Ubuntu 11.04 下给Firefox安装Flash插件</h2>
+		<p>在Ubuntu下安装Flash插件貌似相当方便了，在Firefox下打开Adobe Flash&nbsp;Player的网站：</p>
+
+<p><a href="http://get.adobe.com/flashplayer/">http://get.adobe.com/flashplayer/</a></p>
+
+<p>在下拉框里悬在<span class="caps">APT</span> for&nbsp;Ubuntu</p>
+
+<p>再点击Download&nbsp;Now</p>
+
+<p>然后会直接打开Ubuntu Software&nbsp;Center</p>
+
+<p>点击Install</p>
+
+<p>安装完成后重新启动Firefox就可一播放视频了。</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-07 16:25:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/ubuntu-11-04-flash-installation.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/ubuntu-11-04-flash-installation.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>About</h2>
+		<p><strong>Start today. Refine&nbsp;tomorrow.</strong></p>
+
+<p>If you are waiting for the perfect moment to start or the perfect
+product to start with, my bets are that you will keep on waiting for&nbsp;ever.</p>
+
+<p>Quality is important when there is enough of&nbsp;quantity.</p>
+
+<p>If you have not yet started doing something, start doing it and then
+think about making it&nbsp;better.</p>
+
+<p>Think about the quality of your articles only after you start writing.
+Before that your concern should be about starting. Think about scaling
+your web application after you get enough traffic. Before that think of
+ways to get good&nbsp;traffic.</p>
+
+<p>So I rebuild this site using&nbsp;wordpress.</p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-06-06 10:21:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//wordpress/sample-page-2.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/wordpress/sample-page-2.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110425</h2>
+		<p>追求重要的东西，哪怕失败了，这个世界也会因为你的尝试而更加精彩。—Tim&nbsp;O’Reilly</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiB9wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-25 14:44:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110425.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110425.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Perfect vs. interesting</h2>
+		<p>Also some words from Seth&#8217;s&nbsp;Blog.</p>
+
+</p>
+
+<p>There are two jobs available to most of&nbsp;us:</p>
+
+</p>
+
+<p>You can be the person or the organization that&#8217;s perfect. The one that
+always ships on time, without typos, that delivers flawlessly and dots
+every i. You can be the hosting company or the doctor that might be
+boring, but is always&nbsp;right.</p>
+
+</p>
+
+<p>Or you can be the person or the organization that&#8217;s interesting. The
+thing about being interesting, making a ruckus, creating remarkable
+products and being magnetic is that you only have to be that way once in
+a while. No one is expected to be interesting all the&nbsp;time.</p>
+
+</p>
+
+<p>When an interesting person is momentarily not-interesting, I wait
+patiently. When a perfect organization, the boring one that&#8217;s constantly
+using its policies to dumb things down, is imperfect, I get annoyed.
+Because perfect has to be perfect all the&nbsp;time.</p>
+
+</p>
+
+<p>或许可以换句话说：生于忧患死于安乐，亦或者是人挪死树挪活。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiZ7wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-13 15:21:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/perfect-vs-interesting.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/perfect-vs-interesting.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>How to Fail</h2>
+		<p>This is some words from Seth&#8217;s Blog, a article about <a href="http://sethgodin.typepad.com/seths_blog/2011/04/how-to-fai.html">how to fail</a>.
+After reading that post, you may have a different opinion about&nbsp;fail.</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>Successful people fail often, and, worth noting, learn more from that
+failure than everyone&nbsp;else.</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>Here are six random ideas that will help you fail better, more often and
+with an inevitably positive&nbsp;upside:</p>
+
+</p>
+
+<ul>
+<li>Whenever possible, take on specific&nbsp;projects.</li>
+<li>Make detailed promises about what success looks like and when it
+    will&nbsp;occur.</li>
+<li>Engage others in your projects. If you fail, they should be involved
+    and know that they will fail with&nbsp;you.</li>
+<li>Be really clear about what the true risks are. Ignore the vivid,
+    unlikely and ultimately non-fatal risks that take so much of our
+    focus&nbsp;away.</li>
+<li>Concentrate your energy and will on the elements of the project that
+    you have influence on, ignore external events that you can&#8217;t avoid
+    or&nbsp;change.</li>
+<li>When you fail (and you will) be clear about it, call it by name and
+    outline specifically what you learned so you won&#8217;t make the same
+    mistake twice. People who blame others for failure will never be
+    good at failing, because they&#8217;ve never done&nbsp;it.</li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiz5wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-11 14:53:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/how-to-fail.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/how-to-fail.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Ubuntu Natty 11.04</h2>
+		<p>I get to know ubuntu from 2006, while I was a still a student used
+ubuntu for a while. At that time I tried many dist of linux, such as
+Debian, RedHat, Fedora, CentOS <span class="caps">SUSE</span>, Gentoo, even <span class="caps">LFS</span>. But finally turn
+to Debian. Now I&#8217;m coming back to Ubuntu on my laptop. Hope everything
+goes&nbsp;well.</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiy5wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-10 15:04:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/ubuntu-natty.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/ubuntu-natty.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>服务器优化</h2>
+		<p>就以现在对服务器的了解，只是知道了一点点的皮毛而已，更谈不上优化了，是不是说了解的越多，越知道自己的不足呢？真的很想知道像全球前10大网站他们是如何配置自己的服务器的呢？又是如何进行优化的呢？</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRix5wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-09 17:39:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/server-optimized.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/server-optimized.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110410</h2>
+		<p>有这么一个习惯：对于新事物自己有很强的兴趣去研究，直到自己明白了为止。有时候或许是自己认为自己明白了，因为往往是将一个程序配置好了可以用了就放在那里了，于是也就不再去做更加深入的研究。</p>
+
+</p>
+
+<p>最近，越来越觉得是或许正是自己的这个习惯导致没能将自己提升到另一个高度了。新东西研究明白了，本来想写点东西记录整个过程，但是往往会觉得自己已经明白了，再找个宽裕点的时间来写会更好，时间充裕更能将文笔润色好，写的会更明白。但就是这种想法，导致很多东西没能写下来，搁置在了那里。</p>
+
+</p>
+
+<p>我需要改一改这一个毛病，不管是因为什么，应该及时将过程记录下来，俗话说好记性不如烂笔头，先行记录下来，可以日后再行完善。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjJ3wIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-09 16:47:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110410.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110410.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Debian vs php-fpm</h2>
+		<ul>
+<li><a href="">http://www.lowendtalk.com/questions/5256/upgrading-nginxphp-with-default-lowendscript</a></li>
+<li>[http://wiki.mediatemple.net/w/(ve):Install_PHP-FPM_on_Debian_5.0][]</li>
+<li><a href="">http://www.bytetouch.com/blog/linux/how-to-nginx-with-php-fpm-fastcgi-implementation-on-debian-lenny/</a></li>
+<li><a href="">http://www.bytetouch.com/blog/linux/how-to-mysql-5-1-and-php-5-3-on-debian-lenny/</a></li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjh1wIM" /></p>
+
+<pre><code>http://www.lowendtalk.com/questions/5256/upgrading-nginxphp-with-default-lowendscript
+http://wiki.mediatemple.net/w/(ve):Install_PHP-FPM_on_Debian_5.0
+http://www.bytetouch.com/blog/linux/how-to-nginx-with-php-fpm-fastcgi-implementation-on-debian-lenny/
+http://www.bytetouch.com/blog/linux/how-to-mysql-5-1-and-php-5-3-on-debian-lenny/
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-08 17:23:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/debian-vs-php-fpm.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/debian-vs-php-fpm.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>MYSQL TIPS</h2>
+		<p>MySQL创建数据库的方法：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>create database database-name default character set utf8 default
+collate&nbsp;utf8_general_ci;</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>MySQL修改用户密码的方法：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>use&nbsp;mysql</p>
+</p>
+
+<p>update user set password=password(&#8216;password here&#8217;) where&nbsp;user=&#8217;root&#8217;;</p>
+</p>
+
+<p>flush&nbsp;privileges;</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiTyAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-05 02:17:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/mysql-tips.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/mysql-tips.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>背景/纹理</h2>
+		<ul>
+<li><a href="http://www.patternhead.com/">http://www.patternhead.com/</a></li>
+<li><a href="http://patterns.ava7.com/">http://patterns.ava7.com/</a></li>
+<li><a href="http://www.brusheezy.com/">http://www.brusheezy.com/</a></li>
+<li><a href="http://pattern8.com/">http://pattern8.com/</a></li>
+<li><a href="http://www.repeatxrepeaty.com/">http://www.repeatxrepeaty.com/</a></li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiSyAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-04 02:56:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/background-image.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/background-image.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110403</h2>
+		<p>现在是4月3日凌晨2点钟，清明节了，希望在那边的母亲一切安好。</p>
+
+</p>
+
+<p>准备用http://www.lowendserver.net这个域名做一个关于低价服务器的网站，目前正在配置服务器，预计6点钟可以上线。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRj5zwIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-02 17:57:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110403.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110403.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>关于域名转出</h2>
+		<p>今天正式将域名beta4better.org从万网转移到了Godaddy，整个过程还算顺利就是花了不少时间。整个过程找个时间再详细写一下。一定要盯着万网的人给你提供域名密码就好。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiRyAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-04-01 15:22:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/domain-transfer.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/domain-transfer.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello tumblr</h2>
+		<p>晚上在<span class="caps">V2EX</span>上看大家讨论多余140字的微博应用的时候发现了tumblr，于是乎注册了一个账户进来看了看，便喜欢上了这里。从about页面了解到，tumblr从2007年就开始运行了，而我知道2011年才知道这里，不禁感叹一下，落伍了呀！</p>
+
+</p>
+
+<p>风格、速度都非常的满意，开一个账户，绑定一个<a href="http://blog.beta4better.me/">域名</a>，引用tumblr的几句话：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>It does not matter how slow you go so long as you do not&nbsp;stop.</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>开始我的tumblr之旅吧！</p>
+
+</p>
+
+<p>2011年3月31日&nbsp;夜</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRipwAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-31 15:42:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/hello-tumblr.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/hello-tumblr.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110330</h2>
+		<p>今天晚上<span class="caps">V2EX</span>上看到在讨论twitter
+api的问题提到了一个项目<a href="http://code.google.com/p/gtap/">gtap</a>。但是下载0.4.1版，部署后却发现不能用，错误信息如下：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>Traceback (most recent call&nbsp;last):</p>
+</p>
+
+<p>File
+&#8220;/base/python_runtime/python_lib/versions/1/google/appengine/ext/webapp/<strong>init</strong>.py&#8221;,
+line 634, in <strong>call</strong></p>
+<p>handler.get(*groups)</p>
+</p>
+
+<p>File &#8220;/base/data/home/apps/<span class="caps">XXX</span>/1.349368123341425958/main.py&#8221;, line
+131, in&nbsp;get</p>
+<p>self.do_proxy(&#8216;<span class="caps">GET</span>&#8217;)</p>
+</p>
+
+<p>File &#8220;/base/data/home/apps/<span class="caps">XXX</span>/1.349368123341425958/main.py&#8221;, line 91,
+in&nbsp;do_proxy</p>
+<p>return success_output(self, gtap_message&nbsp;)</p>
+</p>
+
+<p>File &#8220;/base/data/home/apps/<span class="caps">XXX</span>/1.349368123341425958/main.py&#8221;, line 33,
+in&nbsp;success_output</p>
+<p>handler.response.status = &#8216;200&nbsp;<span class="caps">OK</span>&#8217;</p>
+</p>
+
+<p>AttributeError: can&#8217;t set&nbsp;attribute</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>用google在网上搜了一下关于gtap配置的文章，倒是有很多，差不多都是在2010年8、9月份写的，<span class="caps">V2EX</span>上也有人说可以用，但是没搞明白为什么我部署完却不能用，难道是<span class="caps">RP</span>问题？</p>
+
+</p>
+
+<p>以为是新版的问题，但是却发现上一个版本0.4版下载不了已经。提交了一个issue，看作者回复了。</p>
+
+</p>
+
+<p>twitter虽然注册了很久了，但平时基本不用的。今天研究这个问题花费了一晚上的时间，计划被打乱了。感觉有点不值得。早上争取早起一会把改写的写完。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjBuAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-30 15:38:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110330.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110330.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Howto Deploy MoinMoin via Nginx and uWSGI</h2>
+		<p>这里的内容不能保证是最新的，最新版在这里：<a href="http://wiki.beta4better.org/HowtoDeployMoinMoinviaNginxanduWSGI">via</a>，请移步。</p>
+
+</p>
+
+<p><strong>如何通过Nginx和uWSGI部署MoinMoin</strong></p>
+
+</p>
+
+<p>本<a href="http://www.beta4better.org/">Wiki</a>部署在<a href="http://enscloud.com/">eNetSouth
+Cloud</a>的<span class="caps">VPS</span>上，前端服务器为<a href="http://www.nginx.org/">Nginx</a>。大家可以从<a href="http://www.lowendbox.com/tag/enscloud-com/">这里</a>了解到<a href="http://enscloud.com/">eNetSouth
+Cloud</a>提供的<span class="caps">VPS</span>主机。</p>
+
+</p>
+
+<p>我会用这篇文章详细的介绍整个部署过程。如果有什么疑问可以到这里提问。</p>
+
+</p>
+
+<p>好了言归正传：</p>
+
+</p>
+
+<p>要进行下面的你需要对vps，nginx，python以及uwsgi有一些初步的了解，只要是稍微有一些基础知识就可以了，下面的过程基本上来说是很简单的，只要照着一步一步的做就可以了。</p>
+
+</p>
+
+<p><strong>服务器环境的配置</strong></p>
+
+</p>
+
+<p><span class="caps">VPS</span>安装的系统是Debian&nbsp;Squeeze。首先用下面的命令安装必须的软件：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>apt-get&nbsp;update</p>
+</p>
+
+<p>apt-get&nbsp;upgrade</p>
+</p>
+
+<p>apt-get install build-essential libpcre3-dev libssl-dev psmisc
+python-dev libxml2 libxml2-dev&nbsp;python-setuptools</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p><strong>安装Nginx</strong></p>
+
+</p>
+
+<p>Nginx的安装暂不做详细介绍，我这里使用的版本是nginx/0.8.54。</p>
+
+</p>
+
+<p>为了后面能够通过域名访问wiki，需要在nginx下建立一个虚拟主机，配置文件可以通过<a href="http://c492911.r11.cf2.rackcdn.com/wiki.conf">这里</a>或者<a href="http://dl.dropbox.com/u/5807744/beta4better/uwsgi/wiki.conf">这里</a>下载到，放置到nginx配置文件夹下面就可以了。</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>cd&nbsp;/etc/nginx/sites-enabled</p>
+</p>
+
+<p>wget&nbsp;http://c492911.r11.cf2.rackcdn.com/wiki.conf</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>大家可能注意到uwsgi的启动脚本中有UWSGI_PYHOME、UWSGI_CHDIR和UWSGI_SCRIPT三个参数，分别指向&nbsp;/usr/local/lib/python2.6/dist-packages、/usr/local/share/moin/server和moin.wsgi。这三个参数是运行moinmoin必需的，一定要写，后面会有详细的介绍。</p>
+
+</p>
+
+<p><strong>安装uWSGI</strong></p>
+
+</p>
+
+<p>可以从<a href="http://projects.unbit.it/uwsgi/wiki/WikiStart#Getit">这里</a>下载到uWSGI，有两个版本可以使用，<a href="http://projects.unbit.it/downloads/uwsgi-0.9.7.1.tar.gz">0.9.7.1</a>和<a href="http://projects.unbit.it/downloads/uwsgi-0.9.6.8.tar.gz">0.9.6.8</a>。0.9.7.1是current
+stable的版本，而0.9.6.8是long-term-support的版本，随便选一个就可以了。我这里使用的是0.9.7.1版本。详细的安装方法看<a href="http://projects.unbit.it/uwsgi/wiki/Install">这里</a>。简单的安装方法如下：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>cd&nbsp;/opt</p>
+</p>
+
+<p>tar zxf&nbsp;uwsgi-0.9.7.1.tar.gz</p>
+</p>
+
+<p>cd&nbsp;uwsgi-0.9.7.1</p>
+</p>
+
+<p>make -f&nbsp;Makefile.Py26</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>安装完成后uwsgi位于/usr/bin/uwsgi中，将/usr/bin/uwsgi拷贝到/usr/local/bin中备用。这里之所以这么做是因为nginx我是用源码安装的，默认安装路径是在/usr/local/nginx中，拷贝过来的原因是为了方便管理。</p>
+
+</p>
+
+<p>从<a href="http://c492911.r11.cf2.rackcdn.com/moin-wsgi">这里</a>或者<a href="http://dl.dropbox.com/u/5807744/beta4better/uwsgi/moin-wsgi">这里</a>下载uwsgi的启动脚本，放置到/etc/init.d目录下：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>cd&nbsp;/etc/init.d/</p>
+</p>
+
+<p>wget&nbsp;http://c492911.r11.cf2.rackcdn.com/moin-wsgi</p>
+</p>
+
+<p>chmod +x&nbsp;moin-uwsgi</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>然后，通过下面的命令创建uwsgi的日志文件：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>touch&nbsp;/var/log/moin-uwsgi.log</p>
+</p>
+
+<p>chown www-data&nbsp;/var/log/moin-uwsgi.log</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>最后，通过下面的命令启动uwsgi：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>/usr/sbin/update-rc.d -f moin-uwsgi&nbsp;defaults</p>
+</p>
+
+<p>/etc/init.d/moin-uwsgi&nbsp;start</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>大家可能注意到uwsgi的启动脚本中有&#8212;pythonpath和&#8212;wsgi-file两个参数，分别指向
+/usr/local/lib/python2.6/dist-packages&nbsp;和/usr/local/share/moin/moin.wsgi。这两个目录是安装moinmoin时的位置，后面会有详细的介绍。</p>
+
+</p>
+
+<p>启动脚本中的参数，大家可以根据实际情况进行修改。</p>
+
+</p>
+
+<p><strong>安装MoinMoin</strong></p>
+
+</p>
+
+<p>这里我使用的MoinMoin的版本是1.9.3，大家可以从<a href="http://static.moinmo.in/files/moin-1.9.3.tar.gz">这里</a>下载到：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>cd&nbsp;/opt</p>
+</p>
+
+<p>wget&nbsp;http://static.moinmo.in/files/moin-1.9.3.tar.gz</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>接下来进行解压并安装：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>tar zxf&nbsp;moin-1.9.3.tar.gz</p>
+</p>
+
+<p>cd&nbsp;moin-1.9.3</p>
+</p>
+
+<p>python2.6 setup.py install &#8212;force &#8212;prefix /usr/local&nbsp;&#8212;record=install.log</p>
+</p>
+
+<p>cd&nbsp;/usr/local/share/moin</p>
+</p>
+
+<p>cp server/moin.wsgi&nbsp;.</p>
+</p>
+
+<p>cp config/wikiconfig.py&nbsp;.</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>然后修改配置文件moin.wsgi，在a2）出增加下面一段：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>sys.path.insert(0,&nbsp;&#8217;/usr/local/share/moin&#8217;)</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>接下来做一些必要的配置：</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>cd&nbsp;/usr/local/share</p>
+</p>
+
+<p>chown -R www-data:www-data&nbsp;moin</p>
+</p>
+
+<p>chmod -R ug+rwX&nbsp;moin</p>
+</p>
+
+<p>chmod -R o-rwx&nbsp;moin</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>到此便基本配置好了，修改一些必要的wiki配置信息就可以了。</p>
+
+<p></p>
+
+<p></p>
+
+<blockquote>
+</p>
+
+<p>page_front_page =&nbsp;u&#8221;FrontPage&#8221;</p>
+</p>
+
+<p>superuser = [u&#8221;WikiAdmin&#8221;,&nbsp;]</p>
+<p></p>
+<p></p>
+</blockquote>
+
+</p>
+
+<p>至此，不出什么意外的话，MoinMoin就配置好了，通过wiki.conf里面的域名就可以访问了。</p>
+
+</p>
+
+<p>接下来，你需要去阅读下wiki的文档，做一些必要的配置，学一学wiki的语法就可以使用了。祝大家好运喽。</p>
+
+</p>
+
+<p>有什么问题，请大家到这里<a href="http://www.beta4better.org/questions/2/howto-deploy-moinmoin-via-nginx-and-uwsgi">留言</a>。</p>
+
+</p>
+
+<p>参考文档：</p>
+
+</p>
+
+<ul>
+<li><a href="">http://library.linode.com/web-servers/nginx/python-uwsgi/debian-6-squeeze</a></li>
+<li><a href="http://wiki.osqa.net/display/docs/Home">http://wiki.osqa.net/display/docs/Home</a></li>
+<li><a href="http://projects.unbit.it/uwsgi/wiki/Doc">http://projects.unbit.it/uwsgi/wiki/Doc</a></li>
+<li><a href="http://projects.unbit.it/uwsgi/wiki/Example">http://projects.unbit.it/uwsgi/wiki/Example</a></li>
+<li><a href="http://obmem.info/?p=703">http://obmem.info/?p=703</a></li>
+<li><a href="http://blog.khsing.net/2010/10/run-moinmoin-under-uwsgi-and-n.html">http://blog.khsing.net/2010/10/run-moinmoin-under-uwsgi-and-n.html</a></li>
+<li><a href="http://apt-blog.net/moinmoin-on-nginx-via-fastcgi-and-uwgi">http://apt-blog.net/moinmoin-on-nginx-via-fastcgi-and-uwgi</a></li>
+<li><a href="">http://farter.users.sourceforge.net/blog/2010/12/12/installing-osqa-with-nginx-uwsgi-and-sqlite3-on-ubuntu-lucid-10-04-minimal/</a></li>
+<li><a href="">http://farter.users.sourceforge.net/blog/2011/02/11/running-osqa-with-nginx-and-uwsgi-virtualhosting-mode-with-dynamicapps/</a></li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjZsAIM" /></p>
+
+<pre><code>http://library.linode.com/web-servers/nginx/python-uwsgi/debian-6-squeeze
+http://farter.users.sourceforge.net/blog/2010/12/12/installing-osqa-with-nginx-uwsgi-and-sqlite3-on-ubuntu-lucid-10-04-minimal/
+http://farter.users.sourceforge.net/blog/2011/02/11/running-osqa-with-nginx-and-uwsgi-virtualhosting-mode-with-dynamicapps/
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-30 15:14:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/howto-deploy-moinmoin-via-nginx-and-uwsgi.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/howto-deploy-moinmoin-via-nginx-and-uwsgi.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110329</h2>
+		<p>今天简单的修改了一下页面的布局，左边栏添加了<a href="http://www.osqa.net/"><span class="caps">OSQA</span></a>和<a href="http://moinmo.in/">MoinMoin</a>的链接。我用这两个软件搭建了两个应用，一个用来做<a href="http://www.beta4better.org/"><span class="caps">QA</span>系统</a>，大家可以到那里去浏览，这个网站仅仅是用来写点东西，没有提供评论功能。另一个用来做<a href="http://wiki.beta4better.org/">Wiki</a>用，平时记录一些琐碎的东西。</p>
+
+</p>
+
+<p>同时在<span class="caps">V2EX</span>上看到一个主题在讨论<a href="http://www.v2ex.com/t/10611">记事解决方案</a>，看到了几个不错的应用。于是去注册了，分别将自己的链接放到了左侧Sidebar的位置。</p>
+
+</p>
+
+<ul>
+<li><a href="http://jottit.com/">jottit</a></li>
+<li><a href="http://pen.io">pen.in</a></li>
+<li><a href="http://wrttn.me/">wrttn.me</a></li>
+</ul>
+
+</p>
+
+<p>Footer位置添加了用到的一些加速技术。</p>
+
+</p>
+
+<ul>
+<li><a href="https://www.cloudflare.com/">CloudFlare</a></li>
+<li><a href="http://www.quickweb.co.nz/">QuickWeb</a></li>
+<li><a href="http://nginx.org/">Nginx</a></li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjxqAIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-29 14:58:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110329.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110329.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110328</h2>
+		<p>最近形成恶性循环论，每每到晚上会很精神，白天就无精打采的。工作没什么激情。</p>
+
+</p>
+
+<p>有时候我在想工作是为了什么？</p>
+
+</p>
+
+<p>毕业后便来到了这家公司，已经四年了，期间公司迁到过北京半年，之后又回来了。</p>
+
+</p>
+
+<p>工作是为了钱嘛？在这家公司工资少的可怜。是因为自己的爱好吗？现在的工作与自己所学毫无关系，虽然也是一家跟电脑相关的公司。</p>
+
+</p>
+
+<p>想来想去自己就转到圈子里去了。</p>
+
+</p>
+
+<p>是时候做一些改变了，虽然这第一步迈出去可能会比较痛苦，但是应该趁着还有理想，还有激情的时候去做一些事情，不至于年老了回首往事留下来的都是不甘心。</p>
+
+</p>
+
+<p>思考了几天终于将moinmoin配置好了，前端是nginx，后端是uwsgi。不是DesktopEdition，而是正常的版本，支持都语言哦。这里访问：<a href="http://wiki.beta4better.org/">via</a></p>
+
+</p>
+
+<p>期间参考了一些资料，记录如下：</p>
+
+</p>
+
+<ul>
+<li><a href="">http://library.linode.com/web-servers/nginx/python-uwsgi/debian-6-squeeze</a></li>
+<li><a href="http://moinmo.in/HowTo/UbuntuQuick">http://moinmo.in/HowTo/UbuntuQuick</a></li>
+<li><a href="http://projects.unbit.it/uwsgi/wiki/Doc">http://projects.unbit.it/uwsgi/wiki/Doc</a></li>
+<li><a href="http://projects.unbit.it/uwsgi/wiki/Example">http://projects.unbit.it/uwsgi/wiki/Example</a></li>
+<li><a href="http://obmem.info/?p=703">http://obmem.info/?p=703</a></li>
+<li><a href="http://blog.khsing.net/2010/10/run-moinmoin-under-uwsgi-and-n.html">http://blog.khsing.net/2010/10/run-moinmoin-under-uwsgi-and-n.html</a></li>
+<li><a href="http://apt-blog.net/moinmoin-on-nginx-via-fastcgi-and-uwgi">http://apt-blog.net/moinmoin-on-nginx-via-fastcgi-and-uwgi</a></li>
+<li><a href="">http://farter.users.sourceforge.net/blog/2010/12/12/installing-osqa-with-nginx-uwsgi-and-sqlite3-on-ubuntu-lucid-10-04-minimal/</a></li>
+<li><a href="">http://farter.users.sourceforge.net/blog/2011/02/11/running-osqa-with-nginx-and-uwsgi-virtualhosting-mode-with-dynamicapps/</a></li>
+</ul>
+
+</p>
+
+<p>下一步看一下moinmoin的语法，一些琐碎的东西就会先记录到wiki上，整理好了再放到这里。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiTywEM" /></p>
+
+<pre><code>http://library.linode.com/web-servers/nginx/python-uwsgi/debian-6-squeeze
+http://farter.users.sourceforge.net/blog/2010/12/12/installing-osqa-with-nginx-uwsgi-and-sqlite3-on-ubuntu-lucid-10-04-minimal/
+http://farter.users.sourceforge.net/blog/2011/02/11/running-osqa-with-nginx-and-uwsgi-virtualhosting-mode-with-dynamicapps/
+</code></pre>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-28 13:29:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110328.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110328.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>周末</h2>
+		<p>今天周末，不过感觉比平时还要忙，现在愈发的感觉时间不够用了，什么时候能够有个双休日啊！周六晚上休闲到wow上去看了下，睡的有点晚了，结果直接导致第二天起晚了。周天白天天气不错，太阳暖暖的，上午就把被子和我的花儿拿出去晒晒太阳。忙活了一中午把衣服洗好晾上出去。太阳就是好，晚上就都晾干了。</p>
+
+</p>
+
+<p>明天又是一周的开始了，又要开始忙了。期待清明能够好好捣鼓下自己的事情。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRijmQIM" /></p>
+
+<div class="bottom_article_nav">
+<div class="next"><a href="/gae/firefox4.html">
+    </a>
+    &gt;</div>
+<div class="prev">&lt; <a href="/gae/20110328.html">
+    </a>
+    </div></div>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-27 14:53:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/weekend.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/weekend.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Firefox 4</h2>
+		<p>今天更新了Firefox4，变化好大，默认界面感觉有些Opera的风格，在Win7下默认的中文字体是中文雅黑，感觉怪怪的。</p>
+
+</p>
+
+<p>与3相比变化实在是大。竟然有了同步功能！感觉几款浏览器（Opera、Firefox、Chrome）的样子是越来越像了。Opera下的审查元素功能Chrome也引进来了。</p>
+
+</p>
+
+<p>上一张Firefox4的网站截图：</p>
+
+<p></p>
+
+<p><img alt="" src="http://c463143.r43.cf2.rackcdn.com/firefox4.gif" /></p>
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiimQIM" /></p></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-25 15:23:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/firefox4.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/firefox4.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>coding</h2>
+		<p>虽然在大学时学的专业是计算机科学与技术，但并没有理解到这个专业的本质，理论层面没有领悟到多少，编程的技术也是不精。还好期间自己在接触linux相关的东东，由懵懂到兴趣，之后便着迷了。</p>
+
+</p>
+
+<p>步入社会后虽然从事了一份与所学毫无关系的工作，基本所学就放弃了，但是对于linux相关的领取确实越来越着迷，各个linux发行版：RedHat、Debian、Ubuntu、SuSe、Gentoo、<span class="caps">LFS</span>都接触过，虚拟主机、vps也都了解，数据库MySQL也略知一二。但仔细想来并没有真正自己写过什么代码，只写过一些简单的<span class="caps">HTML</span>代码。想当时还将<span class="caps">W3C</span>上<span class="caps">HTML</span>和<span class="caps">CSS</span>的手册打印了出来看。</p>
+
+</p>
+
+<p>我要静下心来仔细学一门语言，锁定在python。现在的程度是只能看懂，做一些小改动，但是大篇幅的去写一个实现还差好远。python的基本语法，看了忘，忘了再看。断断续续的好几次了，都没有很好的坚持下来。没有实践出不了真知，还只是停留在理论的层面。</p>
+
+</p>
+
+<p>从现在起，每天要看看文档，看看别人写的代码，试着自己去写点什么。坚持下来，我也可以。</p>
+
+</p>
+
+<p>I&nbsp;can!</p>
+
+</p>
+
+<p>2011年3月25日夜，记此，自勉。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiLoQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-25 15:02:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/coding.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/coding.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110325</h2>
+		<p>在github上找到的几个不错的app，记下来：</p>
+
+</p>
+
+<ul>
+<li><a href="https://github.com/epronk/python-blog-content">https://github.com/epronk/python-blog-content</a></li>
+<li><a href="https://github.com/anotherjesse/fobliki">https://github.com/anotherjesse/fobliki</a></li>
+<li><a href="https://github.com/bgolub/blog">https://github.com/bgolub/blog</a></li>
+<li><a href="https://github.com/ametaireau/pelican">https://github.com/ametaireau/pelican</a></li>
+<li><a href="https://github.com/realbasic/python-blog-system">https://github.com/realbasic/python-blog-system</a></li>
+</ul>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiKoQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-25 14:17:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110325.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110325.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>beta4better.org</h2>
+		<p>晚上回家将在www.enscloud.com购买的vps升级，从lenny升级到squeeze，过程还算顺利，就是整个过程相当缓慢，升级过程中在考虑，这家不会是在超售吧？vmware的vps应该不至于吧？？</p>
+
+</p>
+
+<p>升级完了，reboot，悲剧发生了:vps无法启动了，ssh也登陆不进去，vcenter也进不去。记得上次也升级过，同样的情况。</p>
+
+</p>
+
+<p>提交了ticket，同时也给brandonc@enetsouth.com&nbsp;发了邮件，希望能够尽快解决。</p>
+
+</p>
+
+<p>这家的vps用的还算不错，基于vmware的，<span class="caps">400MB</span>的内存，出口带宽10Mb，不限流量，每个月\$6.95,不想就这么放弃了。昨天刚刚在上面部署了两个python的应用啊！</p>
+
+</p>
+
+<p>祈祷吧！问题尽快解决就好。</p>
+
+</p>
+
+<p>update&nbsp;20110325-00:04</p>
+
+</p>
+
+<p>Brandonc已着手帮我解决，感谢他。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRi7kQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-24 15:25:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110324.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110324.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>限时免费的GAE反向代理服务</h2>
+		<p>闲来无事，利用闲置的<span class="caps">VPS</span>给需要的人提供免费的<span class="caps">GAE</span>反向代理服务，此服务初步预计持续到2011年7月20日左右。到时再寻其他处理方法。</p>
+
+</p>
+
+<p>暂时仅发布在如下两个地方，如有需要请访问下面的地址：</p>
+
+</p>
+
+<ul>
+<li>[http://www.v2ex.com/t/10117#reply11][]</li>
+<li><a href="http://www.fx7fx.com/">http://www.fx7fx.com/</a></li>
+</ul>
+
+</p>
+
+<p>截止到23号11点已经有4人参与。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRihmQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-23 15:05:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/free-gae-reverse-proxy.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/free-gae-reverse-proxy.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Dropbox reavailable now?</h2>
+		<p>部署在<span class="caps">GAE</span>的上应用貌似是都不能直接上传文件到服务器上去的，必须要使用其他的存储服务才可，今天突然想起来了<a href="https://www.dropbox.com/">Dropbox</a>。于是乎登陆其网站去下载了个客户端。自从Dropbox无法访问后，重装系统就没有再安装Dropbox的客户端了，不过在服务器上的文件依然存在，期间邮箱里收到过几封Dropbox发来的提醒邮件。呼呼，国外的服务商考虑的真是周到啊，用户长时间不登陆还会发邮件提醒，蛮不错的。</p>
+
+</p>
+
+<p>客户端安装后，登陆，在没有设置任何代理的情况下，Dropbox竟然能够直接同步文件了，好奇怪！莫非Dropbox服务又重新可以用了呢？</p>
+
+</p>
+
+<p>不管怎么回事，能用了就好。发个注册链接：<a href="http://db.tt/uvofVfi">via</a>。使用这个链接，我们都可以获得额外<span class="caps">250MB</span>的空间哦。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiC-gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-22 13:32:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/dropbox-reavailable-now.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/dropbox-reavailable-now.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110320</h2>
+		<p>2011年3月20日，农历二月十六。</p>
+
+</p>
+
+<p>今天似乎是个好日子，有好多人选在今天结婚！今天去领新身份证的时候路上碰到了好几家办喜事的。祝福这些新人们！</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjRiQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-20 14:53:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110320.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110320.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110317</h2>
+		<p>突然想换个android的手机，今天看同事买了个<span class="caps">HTC</span>&nbsp;G8，晚上自己在网上看了一会，看的眼花了</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjpgQIM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-17 16:04:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110317.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110317.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110316</h2>
+		<p>照着gae的文档，敲了些代码，搞了第一个gae程序，严格的将就是照着把代码抄了过来，不过还好顺利运行了：<a href="http://t.beta4better.me">via</a></p>
+
+</p>
+
+<p>现在还没有严格意义上的规划，不知道后期会写成什么样子。需要认真学习gae和python，同时好好看别人写的代码，需要做的好多，今后就更加感觉时间的不够用了。</p>
+
+</p>
+
+<p>加油！</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRji2gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-16 14:40:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110316.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110316.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>父亲生日快乐</h2>
+		<p>今天农历二月十一，是我父亲的生日。我弟前两天还提醒过我一次，跟我商量买了个老年人用的手机，不过我还是没有记住今天是我爸的生日，直到晚上我弟打电话跟我讲，我才记起来。作为儿子，还是长子，有些不孝啊。平时陪父亲的时候就少，哎！</p>
+
+</p>
+
+<p>晚上回家的路上打电话回家，祝我爸生日快乐。</p>
+
+</p>
+
+<p>父亲当了一辈子的老师，现在退休了。07年的时候母亲去世，家里经过了最艰难的时候，现在父亲在学校找了一份门卫的工作。干一天休息一天还算不错。跟我讲说今年五月份合同到期就不想再干了，因为再签合同就是一年，天冷的时候有点受不了。父亲年纪大了，身体也一年不如一年了。还好我弟毕业后会在家工作，能多陪陪父亲，感谢小弟弟了。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiZ8gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-15 13:55:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/to-my-father-happy-birthday.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/to-my-father-happy-birthday.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>CLOUDFLARE</h2>
+		<p>不知道再godaddy购买的域名是否可以使用cloudflare提供的服务，在godaddy的<span class="caps">DNS</span>&nbsp;Manager里修改不了<span class="caps">DS</span>。</p>
+
+</p>
+
+<p>2011-01-15：</p>
+
+</p>
+
+<p>godaddy可以使用的哦，昨天没有仔细去找修改域名服务的位置，现在已经用上了。记得要讲<strong>Basic
+Security Level</strong>关掉，不然会要求验证的。</p>
+
+</p>
+
+<p>而且有一个比较有意思的现象，<span class="caps">DS</span>修改成cloudflare的之后，ping域名时你会发现<span class="caps">IP</span>地址不是你服务器之前的<span class="caps">IP</span>了，变成了另一个。如果用的是vps就不能用域名来登录了，需要直接使用<span class="caps">IP</span>地址，或许这也是一种保护措施吧。还没仔细去看cloudflare的文档，暂时不明了。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiy6gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-14 16:20:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/cloudflare.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/cloudflare.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>gae域名绑定和删除</h2>
+		<p>发现一个奇怪的问题，在给gae绑域名和删除域名的时候需要重复才做4、5次才可以，莫名其妙。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjJ4gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-14 15:27:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/gae-domain-bind-and-delete.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/gae-domain-bind-and-delete.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110313</h2>
+		<p>从11号周五开始一直到今天一直很不在状态，支出好多。胃又开始断断续续的开始疼，难受……</p>
+
+</p>
+
+<p>12号晚上将泡在水里的花挪到花盘里了，沙漠玫瑰让我经常浇水快要死掉了，看来所有的事物都要遵循它的规律，沙漠玫瑰这种植物喜干不喜水，不能经常浇水的，切记！</p>
+
+</p>
+
+<p>前两天在Rackspace
+Cloud上注册了一个账户，开了一个vps，将www.beta4better.me转移到了这里，之前在Quickweb的一个最低端的vps上，只有80M内存的那种，速度还不错。Rackspace&nbsp;Cloud提供的是云虚拟主机，按使用收费。我在考虑像我这样没有什么流量的客户，或许使用这种所用多少付多少钱的主机或许更加合适。Burstnet上的vps购买后也没怎么用，快要到期了，不打算续费了。</p>
+
+</p>
+
+<p>最近准备整理一下，把之前购买的vps重新规划下，买了这么多用到的很少，留下一到两个够用就好。按使用收费的云主机或许更加适合我。</p>
+
+</p>
+
+<p>下周开始安心好好上班，下班后要多多休息。规划一下下一步的学习计划，要就下gae以及nginx和apache的配置，再看看有关gql和sqlite3的文档就好。贪多不精。</p>
+
+</p>
+
+<p>静心，罗马城不是一天建成的。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRj50gEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-13 13:47:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110313.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110313.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110311</h2>
+		<p>虽然不懂的ruby，也没学过rails，但是经过这两天的努力终于在Debian上配置好了Ruby
+on Rails，用Radiant搭建了一个<a href="http://blog.beta4better.me">blog</a>，好兴奋。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiRywEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-11 15:59:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110311.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110311.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Ruby on Rails</h2>
+		<p>gae的反向代理差不多都知道怎么样配置了，不管是用apache还是nginx，基本都可以用了。</p>
+
+</p>
+
+<p>www.beta4better.org使用nginx配置的反向代理，www.beta4better.me使用apache配置的。</p>
+
+</p>
+
+<p>然后无意间看到了一个用ruby写的blog程序：<a href="https://github.com/rgrove/thoth/wiki">thoth</a>。突然想再用rails搭一个blog用。</p>
+
+</p>
+
+<p>经过昨天google频繁出现的500错误，这种想法我觉得还是很有必要的，毕竟多一份备份还是多一份安心。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjcswEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-09 15:17:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/rubyonrails.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/rubyonrails.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>500 ERROR</h2>
+		<p>不知道怎么了今天部分gae程序一直出现500错误，无法正常访问：</p>
+
+</p>
+
+<p>Error: Server&nbsp;Error</p>
+
+</p>
+
+<p>The server encountered an error and could not complete your&nbsp;request.</p>
+
+</p>
+
+<p>If the problem persists, please report your problem and mention this
+error message and the query that caused&nbsp;it.</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRipwwEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-08 16:14:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/500-error.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/500-error.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Squid</h2>
+		<p>现在前段服务器用的是nginx，考虑换squid看看性能，但是没有考虑好裸域如何转到www。</p>
+
+</p>
+
+<p>同时发现一个问题，不知道是什么原因？</p>
+
+</p>
+
+<p>216.239.32.21，此<span class="caps">IP</span>在国内竟然可以ping通，偶尔会有丢包现象。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjzqwEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-07 15:54:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/squid.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/squid.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>裸域重定向到www</h2>
+		<p>将裸域重定向到www的原因是因为大多数人的习惯是在输入网址时首先输www，比如说你要访问<a href="http://http://www.beta4better.me/">我的那些花儿</a>，如果你记得网址的话会习惯性的在地址栏里输入www.beta4better.me，而很少有人会直接输入beta4better.me。为了方便起见也同时是为了统一，因此需要将裸域重定向到www。</p>
+
+</p>
+
+<p>如果你的服务器用的是nginx，那么有一种十分方便的方法，那就是添加一个server块，在里面输入下面的内容即可，很是方便哦。</p>
+
+</p>
+
+<p>rewrite \^/(.*)\$ http://www.beta4better.me/\$1&nbsp;permanent;</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjbswEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-07 15:44:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/naked-domain-redirect-to-www.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/naked-domain-redirect-to-www.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>gae绑定域名</h2>
+		<p>上一篇文章还在说<a href="http://www.beta4better.me/20110307">gae无法绑定我的beta4better.org这个域名</a>，可是就在刚刚beta4better.org这个域名绑定成功了。我一开始以为是因为：</p>
+
+</p>
+
+<ul>
+<li>gae无法绑定两个域名：后来证明是错误的，gae的帮助文档有说明可以绑定两个</li>
+<li>gae不支持国内注册的域名：后来证明也是错误的，绑定成功了，呼呼</li>
+<li>gae需要时间对域名进行验证：这个不好确定，因为确实是在申请域名验证后还一会才可以的</li>
+<li>gae不支持版本号是1的项目绑定域名，这个也不好确定，因为印象中有一个域名是在版本1的时候绑定的</li>
+</ul>
+
+</p>
+
+<p>总之，不管怎么说，最后是绑定成功了，开心。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjaswEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-07 14:18:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/gae-domain-name.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/gae-domain-name.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110307</h2>
+		<p>这两天在研究gae绑定域名的事情，遇到一个奇怪的问题，一不小心将beta4better.me绑定到了这里，再绑定beta4better.org的时候不知道是什么原因添加了域名，但是在将www.beta4better.org绑定到一个gae项目的时候一直添加不上去，没有任何提示信息，从gae的帮助文档里看是可以绑定两个域名的。当中重开了一个gae也是不行。不知什么原因。</p>
+
+</p>
+
+<p>在验证域名的时候看到了这么一个提示：我们正在验证域名所有权。完成这一过程可能会需要
+48&nbsp;小时。</p>
+
+</p>
+
+<p>但是在绑定beta4better.me的时候没有注意这个提示，好像是当场就生效了的。或许等48小时后再尝试一次吧。后天再试一次，希望是需要时间。如果到时候还是不行，那么这里就会正式启用新域名：<a href="http://www.beta4better.me/www.beta4better.me">www.beta4better.me</a>。org的域名就考虑另作别用了。有一点需要提到，org的域名是在国内注册的，而me的域名是在godaddy注册的，难道是因为这个原因？国内网络环境不会悲剧到这种地步吧！</p>
+
+</p>
+
+<p>Good luck! God bless me&nbsp;!</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjyqwEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-07 12:57:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110307.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110307.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110306</h2>
+		<p>找到了另一种nginx反向代理gae的方法，使用cname解析。这次可以使用google的账户登录管理gae了。</p>
+
+</p>
+
+<p>下一步要做的就是将裸域重定向到www。如果你的服务器是nginx，那么请看<a href="http://www.beta4better.me/naked-domain-redirect-to-www">这里</a>。</p>
+
+</p>
+
+<p>但是还遇到一个问题就是，一不小心字gae中将域名绑定错了，看到有delete的链接，但是点击没有反应，正在寻找解决方法。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjZswEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-06 15:49:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110306.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110306.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110305</h2>
+		<p>不知什么原因，我的一个网站<a href="http://beta4better.info/">黯淡的华丽</a>今天晚上突然不能访问了，昨天还是好好的，还可以用<span class="caps">SSH</span>登陆。</p>
+
+</p>
+
+<p>家里的青岛有线电视的网络不能访问，用电信的手机可以访问，请同事帮忙看下，也是有线电视的却可以访问，好奇怪！</p>
+
+</p>
+
+<p>真担心是被<span class="caps">XX</span>掉了，可是花钱买的<span class="caps">VPS</span>啊。或许重启下路由器可能就好了。希望是虚惊一场，不过是应该将现在网络上的数据都定期的备份到本地了。</p>
+
+</p>
+
+<p>同时近期还出现一个情况，那就是Gmail和Google&nbsp;Reader也是时不时的抽风，时断时续的。要是Google提供的服务被<span class="caps">XX</span>掉的话那还能用什么啊！</p>
+
+</p>
+
+<p>感慨的，国内的网络，自己抽风，也同时让人心惊！</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiinAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-05 14:53:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110305.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110305.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Rackspace Cloud</h2>
+		<p>今天在<a href="http://www.rackspacecloud.com/">Rackspace
+Cloud</a>上购今天入手一个云主机，整个过程还算顺利。从网络上大家的介绍RackspaceCloud的云主机是使用多少付多少钱，不过现在暂时还没搞清楚他们是如何计算的。</p>
+
+</p>
+
+<p>首先需要在其网站上注册，你需要提供给自己的信用卡以及手机。注册成功后会收到邮件提示，大概在15分钟内会收到确认的电话，会问几个问题：</p>
+
+</p>
+
+<ul>
+<li>你是不是<span class="caps">XXX</span></li>
+<li>你信用卡的最后四位是什么</li>
+<li>你购买主机的主要用途（我这里说的是个人用，博客。他也就没再多问）</li>
+<li>你在什么地方（我当时开的德国的代理，问我为什么注册时显示的位置和说的不一样，大概解释一下就可以）</li>
+</ul>
+
+</p>
+
+<p>电话结束后你就会收到主机开通的邮件了。里面有主机的<span class="caps">IP</span>和<span class="caps">ROOT</span>的密码，登陆后你就可以开始后面的工作了。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiLpAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-04 14:01:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/rackspacecloud.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/rackspacecloud.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>淘宝网店</h2>
+		<p>今天晚上在淘宝上开了个网店，仔细阅读了<a href="http://a.taobao.com/detail/2011/02/23/443417/1.php">淘宝的规则</a>，最后答题打了95分，呼呼，开店成功。</p>
+
+</p>
+
+<p>这里是<a href="http://shop65203008.taobao.com/">小店地址</a></p>
+
+</p>
+
+<p>现在暂时还没有宝贝，准备做点<span class="caps">VPS</span>代购、虚拟主机代购之类的服务，顺便卖点虚拟主机服务，提供<span class="caps">SSH</span>服务，<span class="caps">GAE</span>代理什么的，现在还只是个初步的规划，宝贝慢慢放上去。</p>
+
+</p>
+
+<p>2011年3月3日，一个指的纪念的日子哦！</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjxqwEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-03 15:56:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/mytaobao.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/mytaobao.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110302</h2>
+		<p>坚持</p>
+
+</p>
+
+<p>今天不太顺利，随机副本和战场都不顺利。换了徽章。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiKpAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-02 15:57:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110302.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110302.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110301</h2>
+		<p>三月份第一天，计划从今天起每天都多少写点什么，不管多少都要写，硬性要求，估计过一段时间能有些积攒吧。</p>
+
+</p>
+
+<p>今天不知是什么原因今天感觉莫名的压力！</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRiJpAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-01 15:57:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110301.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110301.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>下雪了</h2>
+		<p>不能说是2011年的第一场雪，是第二场，今年的雨水异常的少，干旱的不得了。住在市区里有自来水喝感觉不到，上周去理发的时候听他们讲崂山那边都要走老远去找水</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRihnAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-03-01 03:03:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/2011-snow.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/2011-snow.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110228</h2>
+		<p>今天是2011年2月份的最后一天，也是自己27周岁的第二天，本来想在27周岁第一天的时候写的什么，因为种种原因没有写。希望2011年在自己27周岁的时候能够有所作为。</p>
+
+</p>
+
+<p>今天晚上竟然下雪了，而且还好大……</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRi5lAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-02-28 14:18:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110228.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110228.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20110125</h2>
+		<p>術士和戰士均已到85級，且英雄本問題都不大，現著手研究牧師，需要先看一下相關的資料，改動都好大的。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIPCxIHQXJ0aWNsZRjRjAEM" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2011-01-25 15:55:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20110125.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20110125.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>20100911</h2>
+		<p>人真的应该在年轻的时候，坚持去做一些有难度的事情。尤其是当面对的是来自这个社会甚至这个世界的困难的时候，更是不要退缩。因为人心如水，若是不断地退缩，最后就只能流到低下的地方去了。</p>
+
+</p>
+
+<p>每一段需要咬牙坚持的经历，都是后来自己会去感激的。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIOCxIHQXJ0aWNsZRiBfQw" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2010-09-11 06:57:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/20100911.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/20100911.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Hello world!</h2>
+		<p>v0.1.9.1上线。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIOCxIHQXJ0aWNsZRixbQw" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2010-05-10 03:29:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/hello-world.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/hello-world.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+<article class="content">
+	<section>
+				<h2>Picky测试</h2>
+		<p>昨天晚上整到12点半才搞定，今天看看什么效果。</p>
+
+</p>
+
+<p><img alt="" src="http://www.beta4better.me/hit/agtiZXRhNGJldHRlcnIOCxIHQXJ0aWNsZRjhXQw" /></p>
+	</section>		
+	<footer>
+		<hr>
+		<p><i class="icon-calendar"></i> 2010-03-25 02:28:00&nbsp; <i class="icon-user"></i> Charles Yuan&nbsp; <i class="icon-comment"></i> <a href="http://www.beta4better.me//gae/pincky-testing.html#disqus_thread">comments</a>&nbsp;&nbsp;<a href="/gae/pincky-testing.html"> permlink</a>&nbsp;</p>
+	</footer>					
+</article>
+
+
+				</div> <!-- main content span9 -->
+
+				<div class="span3 sidebar">
+					<section class="content about front-color">
+<img src="/assets/images/hill.jpg" />
+</section>
+
+<section class="content blogrolls front-color">
+	<h5>BLOG ROLLS</h5>
+	<ul class="unstyled">
+		<li><i class="icon-th-list"></i><a href="http://abby.beta4better.me/" > 风吹过的夏天</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.lowendserver.net/" > L.E.S</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.v2ex.com/" > V2EX</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.allthingsdistributed.com/" > All Things Distributed</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.lowendbox.com/" > Lowendbox</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.python-china.org/" > Python China</a></li>
+		<li><i class="icon-th-list"></i><a href="http://www.ruby-china.org/" > Ruby China</a></li>
+	</ul>
+</section>
+
+<section class="content archives front-color">
+	<h5>Archives</h5>
+	<ul class="unstyled">
+		<li><i class="icon-bookmark"></i><a href="/freebsd/" > FreeBSD</a></li>
+		<li><i class="icon-bookmark"></i><a href="/2013/" > 2013</a></li>
+		<li><i class="icon-bookmark"></i><a href="/2012/" > 2012</a></li>
+		<li><i class="icon-bookmark"></i><a href="/wordpress/" > Wordpress - legacy</a></li>
+		<li><i class="icon-bookmark"></i><a href="/gae/" > GAE - legacy</a></li>
+	</ul>
+</section>
+
+<section class="content ads">
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-0878077987353821";
+	/* abby.beta4better.me */
+	google_ad_slot = "2936335265";
+	google_ad_width = 200;
+	google_ad_height = 200;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</section>
+				</div><!-- sidebar span3 -->
+			</section><!-- main content sectoin  -->
+
+			<footer class="content text-left footer">
+				<p class="muted">&copy; 2010-2013</p>
+			</footer><!-- foot section -->	
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap-transition.js"></script>
+    <script src="/assets/js/bootstrap-alert.js"></script>
+    <script src="/assets/js/bootstrap-modal.js"></script>
+    <script src="/assets/js/bootstrap-dropdown.js"></script>
+    <script src="/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/assets/js/bootstrap-tab.js"></script>
+    <script src="/assets/js/bootstrap-tooltip.js"></script>
+    <script src="/assets/js/bootstrap-popover.js"></script>
+    <script src="/assets/js/bootstrap-button.js"></script>
+    <script src="/assets/js/bootstrap-collapse.js"></script>
+    <script src="/assets/js/bootstrap-carousel.js"></script>
+    <script src="/assets/js/bootstrap-typeahead.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'beta4better'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+
+</body>
+</html>

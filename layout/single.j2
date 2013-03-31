@@ -1,0 +1,54 @@
+{# Columns template #}
+
+{% extends "topbar.j2" %}
+
+{% block basecss %}
+{{ super() }}
+<link href="{{ media_url('css/columns.css') }}" rel="stylesheet">
+{% endblock basecss %}
+
+
+{% block content %}
+
+<div class="page-header">
+  {% block header %}
+  <h1>
+    {% block page_title %}{{ resource.meta.title }}{% endblock %}
+    {% if resource.meta.subtitle %}<small>{% block page_subtitle %}{{ resource.meta.subtitle }}{% endblock %}</small>{% endif %}
+    {% if resource.meta.date %}<p><small>{{ resource.meta.date }}</small></p>{% endif %}
+  </h1>
+  {% endblock header %}
+</div>
+
+<div class="row">
+  <div class="span14">
+      {% filter markdown -%}
+      {% block main %}{% endblock %}
+      {%- endfilter %}
+
+
+
+  {% if resource.next_by_time or resource.prev_by_time %}  
+
+    <ul class="pager">
+    {% if resource.next_by_time is not none -%}
+        <li class="next"><a href="{{ resource.next_by_time.full_url }}">
+        {{ resource.next_by_time.meta.title }} &#187;</a>
+        </li>
+    {%- endif %}
+
+    {% if resource.prev_by_time is not none -%}
+        <li class="previous"><a href="{{ resource.prev_by_time.full_url }}">
+        &#171; {{ resource.prev_by_time.meta.title }}</a>
+        </li>
+    {%- endif %}
+    </ul>    
+  {% endif %}
+          
+  </div>
+</div>
+
+{% endblock content %}
+
+
+

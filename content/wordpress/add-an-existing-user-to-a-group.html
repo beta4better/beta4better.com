@@ -1,0 +1,11 @@
+---
+title: Linux下添加现有用户到一个已存在的组
+date: 2011-06-08 15:12:00
+Author: Beta4Better
+Category: Uncategorized
+Tags: usermod, virtualbox
+slug: add-an-existing-user-to-a-group
+---
+会有这个需要是因为迁移VirtualBox的虚拟主机后系统提示当前用户不在某某组，设备无法正常使用，需要添加现在的用户到某个组里去，需要用到这个命令：
+
+usermod -a -G username needed-group
