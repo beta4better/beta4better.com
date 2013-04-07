@@ -11,7 +11,7 @@ plugins:
 context:
     data:
         site_title: Beyond Writing
-        site_url: 'http://www.beta4better.me/'
+        site_url: http://www.beta4better.me
         site_desc: 'Pursue something so important that even if you fail, the world is better off with you having tried.'
         author:
             name: beta4better
