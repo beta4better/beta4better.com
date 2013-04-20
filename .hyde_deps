@@ -119,6 +119,14 @@
 !!python/unicode 'assets_1.4/js/libs/bootstrap-twipsy.js': []
 !!python/unicode 'assets_1.4/js/libs/dd_belatedpng.js': []
 !!python/unicode 'assets_1.4/js/libs/jquery-1.5.1.min.js': []
+!!python/unicode 'freebsd/2013-03-23-install-freebsd-9.1-release-on-shuttle.html': [
+  page.j2, sidebar.j2, post.j2]
+!!python/unicode 'freebsd/2013-03-23-installing-status-30-march.html': [page.j2, sidebar.j2,
+  post.j2]
+!!python/unicode 'freebsd/2013-04-13-misunderstanding-about-current-and-stable.html': [
+  page.j2, sidebar.j2, post.j2]
+!!python/unicode 'freebsd/2013-04-20-using-freebsd-ad-desktop.html': [page.j2, sidebar.j2,
+  post.j2]
 !!python/unicode 'freebsd/index.html': [page.j2, sidebar.j2, archives.j2]
 !!python/unicode 'freebsd/install-freebsd-9.1-release-on-shuttle.html': [page.j2,
   sidebar.j2, post.j2]
