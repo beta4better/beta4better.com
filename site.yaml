@@ -1,53 +1,22 @@
 mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
-media_root: assets # Relative path from content folder.
-media_url: /assets # URL where the media files are served from.
+media_root: media # Relative path from content folder.
+media_url: /media # URL where the media files are served from.
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
-    - hyde.ext.plugins.sorter.SorterPlugin
 
 context:
     data:
-        site_title: Beyond Writing
-        site_url: http://www.beta4better.me
-        site_desc: 'Pursue something so important that even if you fail, the world is better off with you having tried.'
+        site_title: L.E.S
         author:
-            name: beta4better
-            url: "http://www.beta4better.me"
+            name: Charles Yuan
+            url: "http://charles.beta4better.me"
         google_analytics_id: UA-9439246-12
-        disqus_shortname: beta4better
         home_url: /
         menu:
             - title: Home
               url: /
-
-meta:
-    # 'nodemeta' will tell Hyde what file to look for inside a folder from
-    # which to apply meta data to all files (resources) inside it. This is
-    # a great way of simply adding or modifying properties of a very large
-    # number of files.
-    nodemeta: meta.yaml
-    ga_tracking_code: XX-XXXXXXXX-X
-
-sorter:
-    name: # the name of the sorter (no pun intended)
-        attr: name # by which attributes will resources be sorted
-        filters:
-            source_file.kind: html
-            # You can include only files from a certain folder.
-            #resource.node: (name of the folder)
-        #reverse: True # if you need the list backwards
-    time:
-        attr: meta.date
-        reverse: True
-        filters:
-            source_file.kind: html
-            is_processable: True
-
-
-publisher:
-    s3:
-        type: hyde.ext.publishers.pyfs.PyFS
-        url: s3://www.beta4better.me
+            - title: About
+              url: /about

@@ -5,20 +5,3 @@
 {%- endfor %}
 </ul>
 {%- endmacro %}
-
-
-{% macro render_bottom_article_nav() %}
-<div class="bottom_article_nav">
-{% if resource.next_by_time is not none -%}
-    <div class="next"><a href="{{ resource.next_by_time.full_url }}">
-    {{ resource.next_by_time.meta.title }}</a>
-    &gt;</div>
-{%- endif %}
-
-{% if resource.prev_by_time is not none -%}
-    <div class="prev">&lt; <a href="{{ resource.prev_by_time.full_url }}">
-    {{ resource.prev_by_time.meta.title }}</a>
-    </div>
-{%- endif %}
-</div>
-{% endmacro %}
