@@ -1,0 +1,103 @@
+---
+title: 在 Debian 下配置 Jekyll 运行环境
+date: 2014-03-20 13:23:00
+tags: ['debian','jekyll','rvm']
+---
+承接[上一篇](/2014/using-hyde-under-debian.html)来，上次介绍了如何在 Debian 下使用 [Hyde][hyde]，
+今天来写一下如何在 Debian 下配置 [Jekyll][jekyll] 的运行环境。
+
+因为运行 [Jekyll][jekyll] 所需要的 ruby 有很多版本，而且每个版本似乎都可以用，为了方便各个版本 ruby 的管理，我们通过 RVM 来安装 ruby。
+
+首先要保证 curl 已经安装好了。没有的话通过 apt-get 命令安装下：
+
+    sudo apt-get install curl
+
+然后用自己的帐号登录的状态下安装 rvm：
+
+    \curl -sSL https://get.rvm.io | bash -s stable
+
+这个过程非常的快，大概你会看到下面这样的提示：
+
+	Downloading https://github.com/wayneeseguin/rvm/archive/stable.tar.gz
+
+	Installing RVM to /home/beta4better/.rvm/
+	    Adding rvm PATH line to /home/beta4better/.profile /home/beta4better/.bashrc /home/beta4better/.zshrc.
+	    Adding rvm loading line to /home/beta4better/.bash_profile /home/beta4better/.zlogin.
+	Installation of RVM in /home/beta4better/.rvm/ is almost complete:
+
+	  * To start using RVM you need to run `source /home/beta4better/.rvm/scripts/rvm`
+	    in all your open shell windows, in rare cases you need to reopen all shell windows.
+
+	# beta4better,
+	#
+	#   Thank you for using RVM!
+	#   We sincerely hope that RVM helps to make your life easier and more enjoyable!!!
+	#
+	# ~Wayne, Michal & team.
+
+	In case of problems: http://rvm.io/help and https://twitter.com/rvm_io
+
+安装完成后运行 `source ~/.bash_profile` 启用 rvm， 每次你打开 shell 想使用 rvm 的时候都要运行下这个命令。
+
+接下来便是安装 ruby， 我们一版本2.0.0 为例，安装之前请保证你的帐号可以运行 sudo 命令，不行的话请单独以 root 权限运行下面的命令来提前安装相应的依赖关系：
+
+    apt-get install gawk libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config libffi-dev
+
+然后运行下面的命令安装 ruby 2.0.0.：
+
+    rvm install 2.0.0
+
+这个会花一些时间，如下：
+
+	Searching for binary rubies, this might take some time.
+	No binary rubies available for: debian/7/x86_64/ruby-2.0.0-p451.
+	Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+	Checking requirements for debian.
+	Installing requirements for debian.
+	Updating system.....
+	Installing required packages: gawk, libreadline6-dev, libyaml-dev, libsqlite3-dev, sqlite3, autoconf, libgdbm-dev, libncurses5-dev, automake, libtool, bison, pkg-config, libffi-dev.............
+	Requirements installation successful.
+	Installing Ruby from source to: /home/beta4better/.rvm/rubies/ruby-2.0.0-p451, this may take a while depending on your cpu(s)...
+	ruby-2.0.0-p451 - #downloading ruby-2.0.0-p451, this may take a while depending on your connection...
+	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+		                         Dload  Upload   Total   Spent    Left  Speed
+	100 10.2M  100 10.2M    0     0   181k      0  0:00:57  0:00:57 --:--:--  136k
+	ruby-2.0.0-p451 - #extracting ruby-2.0.0-p451 to /home/beta4better/.rvm/src/ruby-2.0.0-p451...
+	ruby-2.0.0-p451 - #applying patch /home/beta4better/.rvm/patches/ruby/changeset_r45225.diff.
+	ruby-2.0.0-p451 - #applying patch /home/beta4better/.rvm/patches/ruby/changeset_r45240.diff.
+	ruby-2.0.0-p451 - #configuring.................................................
+	ruby-2.0.0-p451 - #post-configuration.
+	ruby-2.0.0-p451 - #compiling............................................................................
+	ruby-2.0.0-p451 - #installing.............................
+	ruby-2.0.0-p451 - #making binaries executable..
+	ruby-2.0.0-p451 - #downloading rubygems-2.2.2
+	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+		                         Dload  Upload   Total   Spent    Left  Speed
+	100  404k  100  404k    0     0  48396      0  0:00:08  0:00:08 --:--:-- 71067
+	No checksum for downloaded archive, recording checksum in user configuration.
+	ruby-2.0.0-p451 - #extracting rubygems-2.2.2...
+	ruby-2.0.0-p451 - #removing old rubygems.........
+	ruby-2.0.0-p451 - #installing rubygems-2.2.2..............
+	ruby-2.0.0-p451 - #gemset created /home/beta4better/.rvm/gems/ruby-2.0.0-p451@global
+	ruby-2.0.0-p451 - #importing gemset /home/beta4better/.rvm/gemsets/global.gems.............................................................
+	ruby-2.0.0-p451 - #generating global wrappers.........
+	ruby-2.0.0-p451 - #gemset created /home/beta4better/.rvm/gems/ruby-2.0.0-p451
+	ruby-2.0.0-p451 - #importing gemsetfile /home/beta4better/.rvm/gemsets/default.gems evaluated to empty gem list
+	ruby-2.0.0-p451 - #generating default wrappers.........
+	ruby-2.0.0-p451 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+	Install of ruby-2.0.0-p451 - #complete 
+	Please be aware that you just installed a ruby that requires 2 patches just to be compiled on an up to date linux system.
+	This may have known and unaccounted for security vulnerabilities.
+	Please consider upgrading to ruby-2.1.1 which will have all of the latest security patches.
+	Ruby was built without documentation, to build it run: rvm docs generate-ri
+
+完了就可以正常使用了。
+
+
+[Hyde][hyde] 和 [Jekyll][jekyll] 都算是 Linux下面比较有名的静态网站生成工具了。
+
+
+
+[hyde]: http://github.com/hyde/hyde
+[bootstrap]: http://github.com/twitter/bootstrap
+[jekyll]: https://github.com/mojombo/jekyll
