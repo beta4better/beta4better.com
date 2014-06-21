@@ -1,0 +1,15 @@
+---
+title: MYSQL TIPS
+date: 2011-04-05 02:17:00
+Author: beta4better
+Slug: mysql-tips
+---
+MySQL创建数据库的方法：
+
+    create database database-name default character set utf8 default collate utf8\_general\_ci;
+
+
+MySQL修改用户密码的方法：
+
+    update user set password=password('password here') where user='root';
+    flush privileges;
