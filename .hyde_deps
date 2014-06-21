@@ -46,7 +46,7 @@
   post.j2]
 !!python/unicode '2012/2012-07-11-hyde.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2012/2012-07-12-notes-of-july.html': [page.j2, sidebar.j2, post.j2]
-!!python/unicode '2012/index.html': [page.j2, sidebar.j2, archives.j2]
+!!python/unicode '2012/index.html': [sidebar.j2, page.j2, archives.j2]
 !!python/unicode '2013/2013-01-04-hello-2013.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/20130227.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/debian-wireless-network-howto.html': [page.j2, sidebar.j2,
@@ -58,7 +58,7 @@
 !!python/unicode '2013/hello-hyde.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/howto-set-bash-csh-enviroment-variable.html': [page.j2, sidebar.j2,
   post.j2]
-!!python/unicode '2013/index.html': [page.j2, sidebar.j2, archives.j2]
+!!python/unicode '2013/index.html': [sidebar.j2, page.j2, archives.j2]
 !!python/unicode '2013/kiloserve-is-down.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/obtvse-deploy-howto.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/personal-opinion-about-bloging.html': [page.j2, sidebar.j2,
@@ -75,7 +75,8 @@
   post.j2]
 !!python/unicode '2013/wordpress.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode '2013/xfce4-goodies.html': [page.j2, sidebar.j2, post.j2]
-!!python/unicode 'archives.html': [page.j2, sidebar.j2]
+!!python/unicode 'about/index.html': [1040.j2, macros.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'archives.html': [sidebar.j2, page.j2]
 !!python/unicode 'assets/css/__style.css': []
 !!python/unicode 'assets/css/bootstrap-responsive.css': []
 !!python/unicode 'assets/css/bootstrap.css': []
@@ -127,7 +128,7 @@
   page.j2, sidebar.j2, post.j2]
 !!python/unicode 'freebsd/2013-04-20-using-freebsd-ad-desktop.html': [page.j2, sidebar.j2,
   post.j2]
-!!python/unicode 'freebsd/index.html': [page.j2, sidebar.j2, archives.j2]
+!!python/unicode 'freebsd/index.html': [sidebar.j2, page.j2, archives.j2]
 !!python/unicode 'freebsd/install-freebsd-9.1-release-on-shuttle.html': [page.j2,
   sidebar.j2, post.j2]
 !!python/unicode 'freebsd/installing-status-30-march.html': [page.j2, sidebar.j2,
@@ -173,7 +174,7 @@
 !!python/unicode 'gae/how-to-fail.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'gae/howto-deploy-moinmoin-via-nginx-and-uwsgi.html': [page.j2, sidebar.j2,
   post.j2]
-!!python/unicode 'gae/index.html': [page.j2, sidebar.j2, archives.j2]
+!!python/unicode 'gae/index.html': [sidebar.j2, page.j2, archives.j2]
 !!python/unicode 'gae/mysql-tips.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'gae/mytaobao.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'gae/naked-domain-redirect-to-www.html': [page.j2, sidebar.j2, post.j2]
@@ -187,6 +188,43 @@
 !!python/unicode 'gae/ubuntu-natty.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'gae/weekend.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'index.html': [page.j2, sidebar.j2, post.j2]
+!!python/unicode 'media/css/bootstrap.css': []
+!!python/unicode 'media/css/bootstrap.min.css': []
+!!python/unicode 'media/css/columns.css': []
+!!python/unicode 'media/css/style.css': []
+!!python/unicode 'media/js/libs/bootstrap-alerts.js': []
+!!python/unicode 'media/js/libs/bootstrap-buttons.js': []
+!!python/unicode 'media/js/libs/bootstrap-dropdown.js': []
+!!python/unicode 'media/js/libs/bootstrap-modal.js': []
+!!python/unicode 'media/js/libs/bootstrap-popover.js': []
+!!python/unicode 'media/js/libs/bootstrap-scrollspy.js': []
+!!python/unicode 'media/js/libs/bootstrap-tabs.js': []
+!!python/unicode 'media/js/libs/bootstrap-twipsy.js': []
+!!python/unicode 'media/js/libs/dd_belatedpng.js': []
+!!python/unicode 'media/js/libs/jquery-1.5.1.min.js': []
+!!python/unicode 'tips/cloudflare.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/debian-vs-php-fpm.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/domain-transfer.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/gae-domain-bind-and-delete.html': [macros.j2, single.j2, base.j2,
+  analytics.j2, topbar.j2]
+!!python/unicode 'tips/gae-domain-name.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/howto-deploy-moinmoin-via-nginx-and-uwsgi.html': [macros.j2,
+  single.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'tips/howto-deploy-osqa-via-nginx-and-uwsgi.html': [macros.j2, single.j2,
+  base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'tips/index.html': [macros.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'tips/mysql-tips.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/naked-domain-redirect-to-www.html': [macros.j2, single.j2,
+  base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'tips/rackspacecloud.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
+!!python/unicode 'tips/squid.html': [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
 !!python/unicode 'wordpress/20110607.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'wordpress/20110608.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'wordpress/20110623.html': [page.j2, sidebar.j2, post.j2]
@@ -197,7 +235,7 @@
 !!python/unicode 'wordpress/ctdlloginexistinguser.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'wordpress/freebsd.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'wordpress/hello-svbtle.html': [page.j2, sidebar.j2, post.j2]
-!!python/unicode 'wordpress/index.html': [page.j2, sidebar.j2, archives.j2]
+!!python/unicode 'wordpress/index.html': [sidebar.j2, page.j2, archives.j2]
 !!python/unicode 'wordpress/sample-page-2.html': [page.j2, sidebar.j2, post.j2]
 !!python/unicode 'wordpress/ubuntu-11-04-flash-installation.html': [page.j2, sidebar.j2,
   post.j2]
