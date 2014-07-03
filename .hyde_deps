@@ -108,11 +108,17 @@
   analytics.j2, topbar.j2]
 !!python/unicode '2014/hello-2014.html': [macros.j2, single.j2, base.j2, analytics.j2,
   topbar.j2]
+!!python/unicode '2014/install-nginx-under-mac-os-x.html': [macros.j2, single.j2,
+  base.j2, analytics.j2, topbar.j2]
+"2014/install-nginx-under\uFF0Dmac-os-x.html": [macros.j2, single.j2, base.j2, analytics.j2,
+  topbar.j2]
 !!python/unicode '2014/intall-vmware-tools.html': [macros.j2, single.j2, base.j2,
   analytics.j2, topbar.j2]
 !!python/unicode '2014/using-hyde-under-debian.html': [macros.j2, single.j2, base.j2,
   analytics.j2, topbar.j2]
 !!python/unicode '2014/using-jekyll-under-debian.html': [macros.j2, single.j2, base.j2,
+  analytics.j2, topbar.j2]
+!!python/unicode '2014/using-jekyll-under-mac-os-x.html': [macros.j2, single.j2, base.j2,
   analytics.j2, topbar.j2]
 !!python/unicode 'about/index.html': [1040.j2, macros.j2, base.j2, analytics.j2, topbar.j2]
 !!python/unicode 'freebsd/2013-03-23-install-freebsd-9.1-release-on-shuttle.html': [

@@ -1,0 +1,34 @@
+---
+title: 在 Mac OS X 下配置 Nginx
+date: 2014-07-01 22:49:00
+tags: ['mbp','nginx','mac']
+ ---
+ 
+安装日志如下，后面再继续更新。
+
+       brew install nginx
+       ==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/ngi
+
+       curl: (56) Recv failure: Connection reset by peer
+       Error: Failed to download resource "nginx"
+       Download failed: https://downloads.sf.net/project/machomebrew/Bottles/ng
+       Warning: Bottle installation failed: building from source.
+       ==> Downloading http://nginx.org/download/nginx-1.6.0.tar.gz
+       ########################################################################
+       ==> ./configure --prefix=/usr/local/Cellar/nginx/1.6.0_1 --with-http_ssl
+       ==> make
+       ==> make install
+       ==> Caveats
+       Docroot is: /usr/local/var/www
+
+       The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080
+       nginx can run without sudo.
+
+       To have launchd start nginx at login:
+           ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
+       Then to load nginx now:
+           launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+       Or, if you don't want/need launchctl, you can just run:
+           nginx
+       ==> Summary
+       <U+1F37A>  /usr/local/Cellar/nginx/1.6.0_1: 7 files, 908K, built in 86 s

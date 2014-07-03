@@ -1,34 +1,42 @@
 ---
-title: 在 MBP 下配置 Nginx
-date: 2014-07-01 22:49:00
-tags: ['mbp','nginx']
+title: 在 Debian 下配置 Hyde 运行环境
+date: 2014-03-19 14:00:00
+tags: ['hyde','debian','python']
 ---
+ 
+[Hyde][hyde]，[之前写过一篇](/2013/hello-hyde.html)提到了她，网站切换到 [Hyde][
 
-安装日志如下，后面再继续更新。
+以前我并不是很注重文档这种东西，大约是要装什么的时候用搜索引擎来处理，搜到结果
+有想过用 WIKI 之类的东西来记录，但是都没有坚持下来。
+但是过了一段时候后发现又会遇到同样的问题，还得用搜索引擎来处理，很是浪费时间。
+所有如果时间允许的话，还是整理一下比较好。
 
-	brew install nginx
-	==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/nginx-1.6.0
+下面便是在 Debian 下配置 Hyde 环境的一些基本方法，比较简单，解决问题就好。
 
-	curl: (56) Recv failure: Connection reset by peer
-	Error: Failed to download resource "nginx"
-	Download failed: https://downloads.sf.net/project/machomebrew/Bottles/nginx-1.6.0_1.mavericks.bottle.tar.gz
-	Warning: Bottle installation failed: building from source.
-	==> Downloading http://nginx.org/download/nginx-1.6.0.tar.gz
-	######################################################################## 100.0%
-	==> ./configure --prefix=/usr/local/Cellar/nginx/1.6.0_1 --with-http_ssl_module 
-	==> make
-	==> make install
-	==> Caveats
-	Docroot is: /usr/local/var/www
+关于安装，可以选择全局安装，也可以创建独立的虚拟环境。
+后者比较好，方便后期的管理，万一出了什么问题，直接把这个目录删掉就好了，
+不会影响到系统中的其他依赖关系。
 
-	The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
-	nginx can run without sudo.
+首先，安装必须的软件包：
 
-	To have launchd start nginx at login:
-	    ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
-	Then to load nginx now:
-	    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
-	Or, if you don't want/need launchctl, you can just run:
-	    nginx
-	==> Summary
-	🍺  /usr/local/Cellar/nginx/1.6.0_1: 7 files, 908K, built in 86 seconds
+    sudo apt-get install python-dev build-essential python-virtualenv
+
+其次，创建独立的虚拟环境：
+
+    virtualenv --no-site-packages hyde-env
+
+激活虚拟环境，如果需要退出，直接运行 `deactive` 命令即可：
+
+    source www.beta4better.me/bin/activate
+
+安装 hyde：
+
+    pip install hyde
+
+然后就可以正常使用了。
+
+大致是这样，比较简单。
+
+
+[hyde]: http://github.com/hyde/hyde
+[bootstrap]: http://github.com/twitter/bootstrap
