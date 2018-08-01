@@ -1,5 +1,0 @@
-extends: single.j2
-default_block: main
-author: Charles Yuan
-charset: UTF-8
-adsense: True
